@@ -16,10 +16,19 @@ function mult(x, y) {
 }
 
 function divBy(x, y) {
+    if (y == 0) {
+        return "Erro zero division";
+    }
     return x / y;
 }
 console.log('Which operation do you want to do?')
-let operation = input('Type + - * /\n')
+let operation = input(`
+    Choose the operation:
+        +
+        -
+        x
+        /
+    `)
 num1 = Number(input('Type the first number\n'));
 num2 = Number(input('Type the second number\n'));
 
