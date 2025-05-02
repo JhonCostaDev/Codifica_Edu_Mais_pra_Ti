@@ -38,9 +38,7 @@ function verifyTriangle(a, b, c) {
 
     return 'Is not a tringle';
 }
-module.exports = { verifyTriangle }; 
-
-
+ 
 let sideA = Number(input('Type the side A: '));
 let sideB = Number(input('Type the side B: '));
 let sideC = Number(input('Type the side C: '));
