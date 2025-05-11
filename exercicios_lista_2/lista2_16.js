@@ -10,6 +10,6 @@ for(let i = 0; i <20; i++) {//Crie um array chamado números contando 10 valores
 console.log("Array Original:");
 console.table(numbers);
 
-//numbers.sort();
+numbers.sort((a, b) => a - b); // ordenando com o metodo sort
 
 console.table(numbers);
