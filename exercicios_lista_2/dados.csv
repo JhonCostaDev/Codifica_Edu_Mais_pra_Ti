@@ -1,0 +1,81 @@
+matrícula,nome,cargo,salário bruto
+F001,Ana Silva,Técnico,3500.50
+F002,Pedro Oliveira,Analista Júnior,5200.75
+F003,Maria Souza,Assistente,2800.00
+F004,João Santos,Analista Sênior,7850.90
+F005,Juliana Costa,Estagiário,1200.00
+F006,Ricardo Pereira,Gerente,10500.00
+F007,Fernanda Lima,Coordenador,8200.30
+F008,Marcelo Rodrigues,Técnico Júnior,3000.20
+F009,Camila Alves,Analista Pleno,6500.45
+F010,Bruno Rocha,Assistente Júnior,2500.80
+F011,Amanda Barros,Técnico Sênior,4800.60
+F012,Lucas Fernandes,Estagiário,1100.50
+F013,Patrícia Gomes,Gerente Júnior,9000.00
+F014,Gustavo Carvalho,Coordenador Júnior,7000.15
+F015,Letícia Ribeiro,Analista Júnior,5500.90
+F016,Thiago Souza,Assistente,2900.70
+F017,Mariana Pinto,Analista Sênior,8100.25
+F018,Rafael Oliveira,Estagiário,1300.40
+F019,Beatriz Costa,Gerente Pleno,12000.50
+F020,Daniel Pereira,Coordenador Pleno,9500.80
+F021,Isabela Lima,Técnico,3700.10
+F022,Vinícius Rodrigues,Analista Júnior,5300.65
+F023,Carolina Alves,Assistente Júnior,2600.95
+F024,Eduardo Rocha,Analista Sênior,7950.35
+F025,Sofia Barros,Estagiário,1150.70
+F026,Felipe Fernandes,Gerente,11000.20
+F027,Laura Gomes,Coordenador,8500.55
+F028,André Carvalho,Técnico Júnior,3100.40
+F029,Natália Ribeiro,Analista Pleno,6700.80
+F030,Lucas Pinto,Assistente,3000.10
+F031,Gabriela Oliveira,Técnico Sênior,4900.90
+F032,Matheus Costa,Estagiário,1250.30
+F033,Julio Pereira,Gerente Júnior,9200.60
+F034,Renata Lima,Coordenador Júnior,7200.95
+F035,Bruno Rodrigues,Analista Júnior,5600.20
+F036,Camila Alves,Assistente Júnior,2700.50
+F037,Diego Rocha,Analista Sênior,8050.75
+F038,Amanda Barros,Estagiário,1350.00
+F039,Thiago Fernandes,Gerente Pleno,12500.80
+F040,Isabela Gomes,Coordenador Pleno,9800.15
+F041,Pedro Carvalho,Técnico,3600.80
+F042,Maria Ribeiro,Analista Júnior,5400.35
+F043,João Pinto,Assistente,2950.60
+F044,Juliana Oliveira,Analista Sênior,7750.95
+F045,Ricardo Costa,Estagiário,1180.20
+F046,Fernanda Pereira,Gerente,10800.40
+F047,Marcelo Lima,Coordenador,8300.75
+F048,Camila Rodrigues,Técnico Júnior,3200.00
+F049,Bruno Alves,Analista Pleno,6600.55
+F050,Amanda Rocha,Assistente Júnior,2550.85
+F051,Lucas Barros,Técnico Sênior,4700.25
+F052,Patrícia Fernandes,Estagiário,1220.90
+F053,Gustavo Gomes,Gerente Júnior,9100.30
+F054,Letícia Carvalho,Coordenador Júnior,7100.65
+F055,Thiago Ribeiro,Analista Júnior,5700.00
+F056,Mariana Pinto,Assistente,3050.35
+F057,Rafael Oliveira,Analista Sênior,8250.60
+F058,Beatriz Costa,Estagiário,1320.75
+F059,Daniel Pereira,Gerente Pleno,12200.90
+F060,Isabela Lima,Coordenador Pleno,9650.25
+F061,Vinícius Rodrigues,Técnico,3800.50
+F062,Carolina Alves,Analista Júnior,5250.80
+F063,Eduardo Rocha,Assistente Júnior,2650.10
+F064,Sofia Barros,Analista Sênior,7800.45
+F065,Felipe Fernandes,Estagiário,1120.55
+F066,Laura Gomes,Gerente,10650.70
+F067,André Carvalho,Coordenador,8150.00
+F068,Natália Ribeiro,Técnico Júnior,3050.20
+F069,Lucas Pinto,Analista Pleno,6450.35
+F070,Gabriela Oliveira,Assistente,2950.80
+F071,Matheus Costa,Técnico Sênior,4850.60
+F072,Julio Pereira,Estagiário,1280.95
+F073,Renata Lima,Gerente Júnior,9350.10
+F074,Bruno Rodrigues,Coordenador Júnior,7350.45
+F075,Camila Alves,Analista Júnior,5550.70
+F076,Diego Rocha,Assistente Júnior,2750.00
+F077,Amanda Barros,Analista Sênior,8000.25
+F078,Thiago Fernandes,Estagiário,1380.50
+F079,Isabela Gomes,Gerente Pleno,12350.65
+F080,Pedro Carvalho,Coordenador Pleno,9750.90
