@@ -9,19 +9,54 @@ Salário líquido:
 const fs = require("fs");
 const Papa = require("papaparse");
 
+function showData(object) {
+    for (key of object) {
+        let register = key.matrícula;
+        let name = key.nome;
+        let occupation = key.cargo;
+        let grossSalary = key['salário bruto'];
+        let netSalary;
+        console.log(`
+            =============================
+            Matrícula: ${register}
+            Nome: ${name}
+            Cargo: ${occupation}
+            Salário Bruto: ${grossSalary}
+            Salário Líquido: ${netSalary}
+            =============================
+            `);
+        //console.log(occupation);
+    }
+}
+
+function readCsvToObject(filePath) {
+    const csvData = fs.readFileSync(filePath, "utf8");
+
+    // Parseando os dados com PapaParse
+    let dados = Papa.parse(csvData, {
+        header: true, // Se o CSV tiver cabeçalhos
+        skipEmptyLines: true // Ignora linhas vazias
+    });
+
+    return dados.data;
+   
+}
+
 // Lendo o arquivo CSV
-filePath = '/home/jhon/Documents/GitHub/maisPraTi_codefica/exercicios_lista_2/dados.csv'
+//filePath = '/home/jhon/Documents/GitHub/maisPraTi_codefica/exercicios_lista_2/dados.csv'
+filePath = 'exercicios_lista_2/dados.csv' // -> No codespace
+/*
 const csvData = fs.readFileSync(filePath, "utf8");
 
 // Parseando os dados com PapaParse
-const resultado = Papa.parse(csvData, {
+let dados = Papa.parse(csvData, {
     header: true, // Se o CSV tiver cabeçalhos
     skipEmptyLines: true // Ignora linhas vazias
 });
 
+const table = dados.data;
+let tableLength = table.length
+*/
+const table = readCsvToObject(filePath);
 
-let tableLength = resultado.data.length
-
-//console.log("Dados CSV:", resultado.data);
-
-console.table(resultado.data);
+showData(table);
