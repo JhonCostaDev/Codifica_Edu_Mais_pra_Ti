@@ -6,10 +6,14 @@ média do número de filhos, o maior salário e o percentual de pessoas com sal�
 350,00.
  */
 
-salario
-num_filhos
+// salario
+// num_filhos
 
-mediaSal 
-mediaNumFilhos
-MaiorSal
-PercentSal<=350
+// mediaSal 
+// mediaNumFilhos
+// MaiorSal
+// PercentSal<=350
+
+function cadastroFamiliar(numFilhos, salario) {
+    
+}
