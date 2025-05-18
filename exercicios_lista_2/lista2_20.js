@@ -9,20 +9,6 @@ Salário líquido:
 const fs = require("fs");
 const Papa = require("papaparse");
 
-<<<<<<< HEAD
-// Lendo o arquivo CSV, foi adicionado um .csv gerado por IA para simular uma análise real
-filePath = 'exercicios_lista_2/dados.csv'
-const csvData = fs.readFileSync(filePath, "utf8");
-
-// Parseando os dados com PapaParse
-const resultado = Papa.parse(csvData, {
-    header: true, // Se o CSV tiver cabeçalhos
-    skipEmptyLines: true // Ignora linhas vazias
-}).data;
-
-//Quantidade de registros
-let tableLength = resultado.length
-=======
 /**
  * This function takes a .csv file and converts the data into an object array
  * @param {string} filePath - Path for the .csv file
@@ -106,26 +92,16 @@ function calculateNetSalary(objectTable) {
     return list;
 }
 
-
-
 // Lendo o arquivo CSV
 //filePath = '/home/jhon/Documents/GitHub/maisPraTi_codefica/exercicios_lista_2/dados.csv'
 filePath = 'exercicios_lista_2/dados.csv' // -> No codespace
 
 const table = readCsvToObject(filePath); // Atribuindo o objeto a uma variável
->>>>>>> 42ea42607045e930671eed04e61a091495028c71
+
 
 const newTable = calculateNetSalary(table); //calculando o desconto INSS
 
-<<<<<<< HEAD
-console.log(resultado);
-console.table(tableLength);
 
-for (registro of resultado){
-    let salario = Number(registro["salário bruto"]);
-    console.log(typeof(salario));
-}
-=======
 showData(newTable); // Exibindo o resultado no console.log.
 
->>>>>>> 42ea42607045e930671eed04e61a091495028c71
+
