@@ -15,6 +15,14 @@ média do número de filhos, o maior salário e o percentual de pessoas com sal�
 // mediaNumFilhos
 // MaiorSal
 // PercentSal<=350
+/**
+ * [
+ *      {
+ *          id: asdf,
+ *          salario: 
+ *      }
+ * ]
+ */
 
 function cadastroFamiliar(numFilhos, salario) {
     
