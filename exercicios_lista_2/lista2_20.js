@@ -9,19 +9,24 @@ Salário líquido:
 const fs = require("fs");
 const Papa = require("papaparse");
 
-// Lendo o arquivo CSV
-filePath = '/home/jhon/Documents/GitHub/maisPraTi_codefica/exercicios_lista_2/dados.csv'
+// Lendo o arquivo CSV, foi adicionado um .csv gerado por IA para simular uma análise real
+filePath = 'exercicios_lista_2/dados.csv'
 const csvData = fs.readFileSync(filePath, "utf8");
 
 // Parseando os dados com PapaParse
 const resultado = Papa.parse(csvData, {
     header: true, // Se o CSV tiver cabeçalhos
     skipEmptyLines: true // Ignora linhas vazias
-});
+}).data;
+
+//Quantidade de registros
+let tableLength = resultado.length
 
 
-let tableLength = resultado.data.length
+console.log(resultado);
+console.table(tableLength);
 
-//console.log("Dados CSV:", resultado.data);
-
-console.table(resultado.data);
+for (registro of resultado){
+    let salario = Number(registro["salário bruto"]);
+    console.log(typeof(salario));
+}
