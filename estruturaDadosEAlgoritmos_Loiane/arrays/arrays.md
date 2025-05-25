@@ -61,3 +61,16 @@ for(let i = 0; i < daysOfWeek.length; i++) {
 }
 ```
 
+## Adicionando elementos à um array
+
+### Push
+Adiciona um novo elemento ao final do array.
+```javascript
+const numbers = [];
+
+numbers.push(11);
+numbers.push(12, 13);
+
+console.log(numbers) // [11, 12, 13]
+
+```
