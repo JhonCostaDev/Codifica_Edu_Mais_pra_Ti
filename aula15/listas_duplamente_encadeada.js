@@ -61,7 +61,35 @@ class DoublyLinkedList {
     }
 
     removeAt(index) {
-        // 1:22 aula15
+        if(index < 0 || index > this.length) throw RangeError("Index out of range!");
+
+        let removed;
+
+        if(this.length === 1) {
+            removed = this.head;
+            this.head = this.tail = null;
+
+        } else if(index === 0) {
+            removed = this.head;
+            this.head = this.head.next;
+            this.head.prev = null;
+        } else if(index === this.length -1) {
+            removed = this.tail;
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+        } else {
+            let current = this.head;
+
+            for(let i = 0; i < index; i++) {
+                current = current.next;
+            }
+
+            removed = current;
+            const {next, prev} = current;
+            prev.next = next;
+        }
+
+        this.length--;
     }
 
     printNext() {
