@@ -13,4 +13,4 @@ function ehDataValida(dia, mes, ano) {
     return dia <= diasPorMes[mes - 1];
 }
 
-console.log(ehDataValida(29, 2, 2021));
+console.log(ehDataValida(29, 3, 2021));
