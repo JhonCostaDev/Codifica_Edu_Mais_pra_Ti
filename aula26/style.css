@@ -1,0 +1,107 @@
+body {
+    font-size: 22pt;
+    background-color: #a9aec3;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background-image: url('assets/pexels.jpg');
+    background-size: cover;
+    border: 1px solid rgb(67, 26, 214);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+
+    /* border: 1px solid rgb(107, 165, 6); */
+    color: rgb(250, 250, 248);
+    text-align: center;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+nav {
+    background-color: rgba(240, 248, 255, 0.262);
+    font-size: 14pt;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    /* border: 1px solid red; */
+    text-decoration: none;
+    padding: 20px;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+nav a {
+    color: white;
+}
+
+figure {
+    text-align: center;
+}
+#sec-text {
+    background-color: aliceblue;
+    margin: 0 auto;
+    width: 70%;
+}
+.text-countainer{
+    /* border: 2px solid brown; */
+    text-align: center;
+    padding: 30px;
+    margin: 0 20px;
+}
+
+.title {
+    background-color: rgba(240, 248, 255, 0.262);
+    width: 60%;
+    border-radius: 15px;
+}
+
+#sec-galery {
+    border: 2px solid rgb(0, 255, 21);
+    width: 100%;
+    display: flex;
+    align-content: center;
+    
+}
+.galery {
+    width: 70%;
+    border: 2px solid blue;
+    
+}
+
+.photos {
+    
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5 px;
+}
+
+.photos img {
+    
+    
+    /* width: calc(50% - 5px); */
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+}
+
