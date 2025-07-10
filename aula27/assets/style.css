@@ -1,9 +1,27 @@
+/* * {
+    padding: 0;
+    margin: 0;
+} */
+
 body {
     align-items: center;
     background-color: #103F79;
     font-size: 16pt;
     color: #103F79;
     
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.28);
+    width: 100%;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
 }
 
 h1 {
@@ -17,7 +35,7 @@ h3 {
 }
 
 figure img {
-    width: 300px;
+    width: 400px;
 }
 
 #cabecalho {
@@ -29,7 +47,7 @@ figure img {
     
     color: rgb(243, 243, 243);
     padding: 10px;
-    height: 240px;
+    height: 740px;
 
     
 }
@@ -37,9 +55,13 @@ figure img {
     width: 100%;
 }
 .container-apresentacao {
-    border: 1px solid rgb(12, 3, 172);
+    border: 1px solid rgb(223, 7, 11);
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
+    max-width: 70%;
     width: 80%;
     margin: 0 auto;
 }
@@ -54,7 +76,21 @@ figure img {
     border: 1px solid black;
     background-color: aliceblue;
     text-align: left;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
-     padding: 15px;
+    padding: 15px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    height: 100px;
+   color: white;
+    margin:  0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.div-footer {
+    
 }
