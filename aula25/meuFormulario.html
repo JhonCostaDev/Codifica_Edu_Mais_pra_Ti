@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">  
+    <!-- google fonts end-->
     <link rel="stylesheet" href="style.css">
     <title>Formularios - june 10th 2025</title>
 </head>
 <body>
     <header>
-
+        <img src="../aula26/assets/Copilot_20250707_100002.png" alt="">
+        <nav>
+            <span><a href="">Home</a></span>
+            <span><a href="">Sobre Nós</a></span>
+            <span><a href="">SAC</a></span>
+        </nav>
+        
     </header>
 
     <main>
@@ -16,13 +27,13 @@
             <h2>Formulário de Cadastro</h2>
             <!--PAREI NA AULA 25 MIN 56:50-->
             <form>
-                <div>
+                <div class="input-group">
                     <label>Nome Completo:</label>
                     <input type="text">
                 </div>
                     <div class="input-group">
                         <label>E-mail:</label>
-                        <input type="email">
+                        <input type="email" placeholder="seuEmail@email.com">
                     </div>
                     <div class="input-group">
                         <label>Senha:</label>
@@ -34,7 +45,7 @@
                     </div>
                     <div class="input-group">
                         <label>Website:</label>
-                        <input type="url">
+                        <input type="url" placeholder="https://seusite.com.br">
                     </div>
                     <div class="input-group">
                         <label>Data de Nascimento:</label>
@@ -56,7 +67,7 @@
                         <label>Gênero:</label>
                         <div class="radio-group">
                             <label for="male">
-                                <input type="radio" value="male" name="gender">Masculino
+                                <input type="radio" value="male" name="gender"><span>Masculino</span>
                             </label>
                             <label for="female">
                                 <input type="radio" value="female" name="gender">Feminino
@@ -93,11 +104,18 @@
                 </div>
                 <div class="input-group">
                     <label for="message">Mensagem: </label>
-                    <textarea name="message" placeholder="Deixe aqui sua mensagem"></textarea>></textarea>
+                    <textarea name="message" placeholder="Deixe aqui sua mensagem"></textarea></textarea>
                 </div>
-                <button type="submit">Enviar</button>
+                <div class="sub-button">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
         </div>
     </main>
+    <footer>
+        <span>
+            <p>Made by Jonathan Costa &copy;2025</p>
+        </span>
+    </footer>
 </body>
 </html>
