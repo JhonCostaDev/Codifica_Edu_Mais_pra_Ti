@@ -12,6 +12,7 @@ tbody, tfoot, thead, tr, th, td {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
 }
  
 body {
@@ -51,6 +52,7 @@ nav a {
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
+    font-weight: bolder;
 }
 
 
@@ -61,9 +63,10 @@ main {
 
 footer {
     border: 1px solid greenyellow;
-    background-color: rgba(0, 0, 0, 0.235);
+    /* background-color: rgba(0, 0, 0, 0.235); */
     width: 100vw;
     height: 5rem;
+    text-align: center;
 }
 
 .top-fixed-bar {
@@ -77,7 +80,8 @@ footer {
 }
 
 .top-fixed-bar img {
-    width: 100px;
+    width: 150px;
+    
 }
 
 .top-fixed-bar a img {
@@ -108,9 +112,10 @@ footer {
 
 .featured-container {
     width: 100vw;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .featured-container h2 {
@@ -120,9 +125,17 @@ footer {
     font-weight: bolder;
 }
 
+figure {
+    /* border: 1px solid rgb(164, 226, 6); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
 .galery {
-     border: 1px solid rgb(10, 10, 221);
-    max-width: 80;
+    /* border: 1px solid rgb(10, 10, 221); */
+    max-width: 1600px;
     display: flex;
     flex-wrap: wrap;
     
@@ -130,9 +143,53 @@ footer {
 }
 
 .galery img {
-     border: 1px solid rgb(164, 226, 6);
+     /* border: 1px solid rgb(164, 226, 6); */
+    background-color: #0505051a;
+    border-radius: 8px;
     min-width: 300px;
     max-width: 500px;
     width: 80%;
+    transition: transform 0.3s;
+}
+.galery img:hover{
+    transform: scale(1.05);
+    border: 1px solid rgb(167, 178, 4);
+}
+
+.category-icons {
+    /* border: 1px solid rgb(154, 4, 14); */
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px
+}
+
+.category-container{
+    /* border: 1px solid rgb(154, 4, 14); */
+    background-color: #0505051a;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.category-container h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+    font-weight: bolder;
+}
+
+.category-container a {
+    color: black;
+    font-weight: bolder;
+}
+
+.category-icons img {
+    /* border: 1px solid rgb(154, 4, 14); */
+    width: 150px;
+    
+    gap: 15px;
     
 }
