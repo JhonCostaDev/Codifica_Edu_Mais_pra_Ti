@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background: radial-gradient(circle, rgb(81, 27, 196), rgb(26, 17, 125));
 
     width: 100vw;
@@ -35,7 +35,13 @@ header {
     text-align: center;
 }
 
+header img {
+    width: 250px;
+    border-radius: 100%;
+}
+
 header h1 {
+    /* border: 1px solid rgb(254, 254, 255); */
     font-size: 52pt;
     font-weight: bolder;
     color: white;
@@ -44,9 +50,19 @@ header h1 {
 
 header p {
     color: white;
-    font-size: 22pt;
+    font-size: 26pt;
     font-weight: bolder;
     margin: 10px;
+
+     font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
 }
 
 nav {
@@ -72,11 +88,12 @@ nav a {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+    padding: 40px 0;
 }
 
-.main-logo {
-    width: 250px;
-}
+/* .main-logo {
+   
+} */
 
 .header-bar input{
     
@@ -85,10 +102,11 @@ nav a {
     border-radius: 8px;
 }
 
-.header-bar h1 {
+/* .header-bar h1 {
     
-    text-align: center;
-}
+    /* text-align: center; 
+    
+} */
 
 .searching-group {
     /* border: 1px solid blue; */
@@ -138,12 +156,47 @@ section {
 
 section h2{
     font-weight: bolder;
-    font-size: 28pt;
+    font-size: 48pt;
+    margin: 30px;
+    font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
 }
+
+
+/* .bitcount-prop-single-<uniquifier> {
+  
+} */
 
 section p {
     text-align: justify;
     font-size: 22pt;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    color: rgb(50, 15, 128);
+}
+
+.mission-vision-containers{
+    margin: 30px;
+}
+
+.mission-vision-containers img{
+    width: 300px;
+    border-radius: 15px;
+}
+
+.mission-vision-containers p{
+    margin: 30px;
 }
 
 
