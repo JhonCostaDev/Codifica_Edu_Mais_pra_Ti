@@ -16,5 +16,64 @@ tbody, tfoot, thead, tr, th, td {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #947d53;
+  font-size: 14pt;
+  font-family: "Krona One", sans-serif;
+  /* font-weight: 200; */
+  font-style: normal;
+}
 
+h1 {
+  text-align: center;
+  font-size: 28pt;
+}
+
+header {
+  background-color: #945C53;
+  color: white;
+  /* border: 1px solid rgb(109, 6, 219); */
+}
+
+section {
+  background-color: #F5E5C8;
+  /* border: 1px solid black; */
+  
+  width: 80vw;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+section h2 {
+  /* border: 1px solid black; */
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18pt;
+  color: #7D5394;
+}
+
+.container-list {
+  display: flex;
+  justify-content: center;
+}
+
+.container-list img {
+  border: 2px solid black;
+  width: 300px;
+  border-radius: 15px;
+}
+.container-list ul, ol {
+    /* border: 1px solid black; */
+    width: 720px;
+}
+
+footer {
+  background-color: #945C53;
+  height: 10vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  
 }
