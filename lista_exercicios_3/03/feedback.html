@@ -25,7 +25,7 @@
                     <label for="">Address</label>
                     <input type="text">
                 </div>
-                <div class="input-textarea">
+                <!-- <div class="input-select">
                     <label for="">Type of Feeedback</label>
                     <select name="" id="">
                         <option value="praise">Praise/Compliment</option>
@@ -33,11 +33,36 @@
                         <option value="complaint">Complaint</option>
                         <option value="question">Question/Doubt</option>
                         <option value="other">Other</option>
-                    </select>
+                    </select> 
+                </div> -->
+
+                <div class="container-type-feedback">
+                    <div class="radial-input">
+                        <label for="">Praise/Compliment
+                            <input type="radio", value="praise" name="type-feedback">
+                        </label>
+
+                        <label for="">Complaint
+                            <input type="radio", value="complaint" name="type-feedback">
+                        </label>
+
+                        <label for="">Suggestion
+                            <input type="radio", value="suggestion" name="type-feedback">
+                        </label>
+
+                        <label for="">Question/Doubt
+                            <input type="radio", value="question" name="type-feedback">
+                        </label>
+
+                        <label for="">Other
+                            <input type="radio", value="other" name="type-feedback">
+                        </label>
+                    </div>
+
+                    <label for="">
+                    <textarea name="" id="" rows="10" cols="30" placeholder="Type your feedback here..." class="input-textarea"></textarea></label>
                 </div>
-                <label for=""></label>
-                <textarea name="" id="" rows="10" cols="30" placeholder="Type your feedback here..."></textarea>
-                <button>Send</button>
+                <div class="submit-button"><button>Send</button></div>
             </form>
         </div>
     </main>
