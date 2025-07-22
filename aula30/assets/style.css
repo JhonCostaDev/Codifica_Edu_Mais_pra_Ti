@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+}
+
+.cube {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.square {
+    width: 100px;
+    background-color: rgb(3, 75, 124);
+    grid-column: 5;
+}
