@@ -12,10 +12,10 @@ body {
         'sidebar main news'
         'footer footer footer'
     ;
-    grid-template-columns: 250px 1fr 250px;
+    grid-template-columns: 1fr 3fr 1fr;
     gap: 15px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 100vw;
     margin: auto;
     border: 1px solid black
 }
@@ -44,6 +44,13 @@ nav ul {
 nav ul li {
     padding: 10px;
     border-bottom: 1px solid #9f9e9e;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:inherit;
+    font-weight: bold;
 }
 
 main {
@@ -71,4 +78,17 @@ footer {
     grid-area: footer;
     text-align: center;
     padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            'header'
+            'sidebar'
+            'main'
+            'aside'
+            'footer'
+        ;
+        grid-template-columns: 1fr;
+    }
 }
