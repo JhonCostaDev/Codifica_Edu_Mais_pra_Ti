@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: rgb(124, 117, 117);
 }
 
 .cube {
@@ -15,5 +15,6 @@ body {
 .square {
     width: 100px;
     background-color: rgb(3, 75, 124);
-    grid-column: 5;
+    grid-column: 3;
+    grid-row: 3;
 }
