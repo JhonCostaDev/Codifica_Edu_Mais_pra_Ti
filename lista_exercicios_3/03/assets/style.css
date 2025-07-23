@@ -16,34 +16,54 @@ tbody, tfoot, thead, tr, th, td {
 }
 
 body {
-    background-color: #D0722F;
+    background-color: #dcdeeb;
     height: 100vh;
     width: 100vw;
-    color: white;
+    color: whitesmoke;
     font-size: 14pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header  {
     border: 1px solid black;
+    height: 20%;
+    background-color: rgb(8, 8, 113);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
-    color: white;
+    /* color: rgb(30, 16, 220); */
+    font-size: 4rem;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 .form-container {
-    border: 1px solid black;
-    background-color: #D02F3C;
+    /* border: 1px solid black; */
+    background-color: #fffefe;
+    color: rgb(28, 5, 144);
+    font-weight: bold;
+    border-radius: 15px;
     width: 80vw;
+    /* height: ; */
     margin: 0 auto;
     /* display: flex; */
+    max-width: 1000px;
 }
 
 .input-group {
-    border: 1px solid rgb(242, 242, 242);
+    /* border: 1px solid rgb(242, 242, 242); */
     display: flex;
     flex-direction: column;
-    
+    padding: 20px;
     
 }
 
@@ -52,16 +72,26 @@ header h1 {
     font-size: 2rem;
 }
 .input-group input {
-    background-color: rgb(208, 205, 205);
+    border: 2px solid rgb(182, 177, 177);
+    background-color: rgb(220, 214, 255);
     border-radius: 4px;
     height: 30px;
     font-size: 1rem;
     
 }
 
+.address-group {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: co;
+}
+
+.address-group input {
+    
+}
 
 .input-textarea {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: rgb(208, 205, 205);
     display: flex;
     flex-direction: column;
@@ -69,7 +99,7 @@ header h1 {
 }
 
 .container-type-feedback {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-around;
 }
@@ -86,14 +116,14 @@ header h1 {
     justify-content: space-between;
 } 
 .radial-input {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     font-size: 2rem;
 }
 
 .submit-button {
-    border: 1px solid rgb(202, 209, 19);
+    /* border: 1px solid rgb(202, 209, 19); */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -102,4 +132,7 @@ header h1 {
 footer {
     border: 1px solid black;
     height: 10vh;
+    background-color: rgb(8, 8, 113);
+    color: whitesmoke;
+    text-align: center;
 }
