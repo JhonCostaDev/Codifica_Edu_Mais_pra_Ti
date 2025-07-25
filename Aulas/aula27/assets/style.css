@@ -1,0 +1,134 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+    align-items: center;
+    background-color: #103F79;
+    font-size: 16pt;
+    color: #103F79;
+    
+}
+
+/* nav {
+    background-color: rgba(0, 0, 0, 0.28);
+    width: 100%;
+    gap: 15px;
+} */
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    color: rgb(221, 214, 7);
+    border: 1px solid white;
+    
+}
+
+h3 {
+    text-align: center;
+}
+
+figure img {
+    width: 400px;
+}
+
+
+
+#cabecalho {
+    background-image: url(https://culturaefutebol.wordpress.com/wp-content/uploads/2022/05/boca-juniors.jpg?w=627&h=293);
+    background-size: cover;
+    /* background-color: #103F79; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    /* border: 1px solid rgb(238, 4, 4); */
+    /* color: rgb(243, 243, 243); */
+    padding: 10px;
+    height: 740px;
+
+    
+}
+
+.barra-superior {
+    /* background-color: rgba(0, 0, 0, 0.402); */
+    /* border: 1px solid rgb(1, 120, 206); */
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    
+    
+}
+.barra-superior img {
+    width: 150px;
+}
+
+.nav-container {
+    background-color: rgba(0, 0, 0, 0.402);
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+    padding: 15px;
+}
+#sec-apresentacao {
+    width: 100%;
+}
+.container-apresentacao {
+    border: 1px solid rgb(223, 7, 11);
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    max-width: 70%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#sec-titulos {
+    width: 100%;
+    display: flex;
+    
+    
+}
+.container-titulos {
+    border: 1px solid black;
+    background-color: aliceblue;
+    text-align: left;
+    width: 70%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    height: 100px;
+   color: white;
+    margin:  0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.div-footer {
+    
+}

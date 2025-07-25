@@ -1,0 +1,17 @@
+Exercício: Página com Menu e Cartões usando Flexbox
+
+Objetivo:
+
+Criar uma página web com um menu de navegação no topo e uma seção com três cartões de conteúdo, utilizando Flexbox para o layout e responsividade.
+
+Instruções:
+
+- Crie um menu horizontal com:
+
+- Um logotipo à esquerda.
+
+- Quatro links à direita.
+
+- Abaixo do menu, crie uma área com 3 cartões dispostos lado a lado.
+
+- Use Flexbox para alinhar e distribuir os elementos.
