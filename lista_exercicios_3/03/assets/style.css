@@ -1,3 +1,13 @@
+:root {
+    --primary-color: #dcdeeb;
+    --secondary-color: #162340;
+    --tertiary-color:#10338b;
+    --quarter-color: rgb(255,255,255);
+    
+
+    --primary-text-color: whitesmoke;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -6,20 +16,20 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center, dl, dt, dd,
 fieldset, form, label, legend, table, caption,
 tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
 }
 
 body {
-    background-color: #dcdeeb;
+    background-color: var(--primary-color);
     height: 100vh;
     width: 100vw;
-    color: whitesmoke;
+    color: var(--primary-text-color);
     font-size: 14pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
@@ -28,9 +38,9 @@ body {
 }
 
 header  {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 20%;
-    background-color: rgb(8, 8, 113);
+    background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,8 +58,8 @@ main {
 
 .form-container {
     /* border: 1px solid black; */
-    background-color: #fffefe;
-    color: rgb(28, 5, 144);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: bold;
     border-radius: 15px;
     width: 80vw;
@@ -69,11 +79,11 @@ main {
 
 .input-group label {
     /* justify-content: left; */
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .input-group input {
     border: 2px solid rgb(182, 177, 177);
-    background-color: rgb(220, 214, 255);
+    background-color: var(--quarter-color);
     border-radius: 4px;
     height: 30px;
     font-size: 1rem;
@@ -81,58 +91,96 @@ main {
 }
 
 .address-group {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: co;
-}
-
-.address-group input {
-    
-}
-
-.input-textarea {
     /* border: 1px solid black; */
-    background-color: rgb(208, 205, 205);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+        'addr number'
+        'neighborhood city'
+    ;
+    grid-template-columns: 2fr 1fr;
+
+}
+
+.input-group select {
+    border: 2px solid rgb(182, 177, 177);
+    border-radius: 4px;
+    background-color: var(--quarter-color);
+    height: 35px;
 }
 
 .container-type-feedback {
     /* border: 1px solid black; */
+    max-width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.radial-input {
+    /* border: 1px solid black; */
+    display: flex;
+    /* flex-direction: column; */
+    font-size: 1.5rem;
+    width: 95%;
+    justify-content: center;
+    
+    
+}
+
+.radial-input label {
+    margin-right: 15px;
+}
+.input-textarea {
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#textarea {
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    background-color: var(--quarter-color);
+    display: flex;
+    width: 95%;
+    height: 150px;
+    min-width: 250px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-button {
+    /* border: 1px solid rgb(202, 209, 19); */
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 30%;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 800px) {
     .container-type-feedback {
         flex-direction: column;
     }
-}
 
-.container-type-feedback label {
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: space-between;
-} 
-.radial-input {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    font-size: 2rem;
-}
-
-.submit-button {
-    /* border: 1px solid rgb(202, 209, 19); */
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    .address-group {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 footer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 10vh;
-    background-color: rgb(8, 8, 113);
+    background-color: var(--secondary-color);
     color: whitesmoke;
     text-align: center;
 }
