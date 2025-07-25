@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #0F172A;
+    --secondary-color: #162340;
+    --buttom-color: #10338b;
+
+    --primary-text-color: whitesmoke;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +14,11 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #0F172A;
+    background-color: var(--primary-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 14pt;
     line-height: 1.8;
-    color: white;
+    color: var(--primary-text-color);
 
 }
 
@@ -28,10 +35,10 @@ nav {
 }
 
 nav span a {
-    color: white;
+    color: var(--primary-text-color);
 }
 header {
-    background-color: #0F172A;
+    
 
 }
 
@@ -68,10 +75,10 @@ header {
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bolder;
-    background-color: #0039CC;
-    color: white;
+    background-color: var(--buttom-color);
+    color: var(--primary-text-color);
     margin: 40px 0 ;
-    border: 2px solid white;
+    border: 2px solid var(--primary-color);
 }
 
 #cv-buttom:hover {
@@ -83,7 +90,7 @@ section h2 {
     font-size: 2rem;
 }
 #about {
-    background-color: #162340;
+    background-color: var(--secondary-color);
     padding: 100px;
     text-align: justify;
     
