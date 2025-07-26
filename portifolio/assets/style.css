@@ -23,7 +23,7 @@ body {
 }
 
 nav {
-    /* border: 1px solid; */
+    border: 1px solid white;
     display: flex;
     
     /* flex-direction: row; */
@@ -32,35 +32,43 @@ nav {
     gap: 15px;
     padding: 0 40px 0 10px;
     height: 80px;
+    width: 100%;
 }
 
 nav span a {
+    
     color: var(--primary-text-color);
 }
 header {
-    
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
 }
 
 
-.header-apresentacao {
-    /* border: 1px solid; */
-    
+.apresentacao {
+    border: 1px solid white;
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-content: center;
 }
 
-.header-apresentacao img {
+.apresentacao img {
     width: 243px;
     border-radius: 50%;
     padding: 20px;
     padding-left: 50px;
 }
 
-.apresentacao {
-    max-width: 506px;
+.apresentacao-text {
+    border: 1px solid white;
+    max-width: 706px;
+    /* min-width: 500px; */
     padding: 20px;
     gap: 20px;
 }
