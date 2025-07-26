@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.container {
+    border: 1px solid;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+
+.item {
+    background-color: rgb(205, 183, 149);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+.item img {
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
