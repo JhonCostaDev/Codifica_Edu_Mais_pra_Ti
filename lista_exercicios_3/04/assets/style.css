@@ -27,6 +27,7 @@ body {
     ;
 
     grid-template-columns: 2fr 1fr;
+    gap:20px
 }
 
 header {
@@ -37,41 +38,8 @@ header {
     
 }
 
-nav {
-    display: flex;
-    border: 1px solid white;
-    gap: 15px;
-    margin: 20px 20px;
-    height: 30px;
-}
-
-nav a{
-    
-    color: white;
-    font-weight: bolder;
-    font-size: 1.5rem;
-
-}
-
-aside {
-    grid-area: aside;
-    background-color: brown;
-}
-
-main {
-    grid-area:main;
-    background-color: aqua;
-}
-
-footer {
-    grid-area: footer;
-    background-color: var(--color-primary);
-    
-}
-
 .top-bar {
-    border: inherit;
-    ;
+    /* border: inherit; */
     display: flex;
     justify-content: space-between;
     
@@ -80,4 +48,96 @@ footer {
 .top-bar img {
     /* border: inherit; */
     width: 300px;
+}
+
+nav {
+    display: flex;
+    border: 1px solid white;
+    gap: 15px;
+    margin: 20px 20px;
+    height: 30px;
+    
+}
+
+nav a{
+    
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    
+}
+
+aside section ul {
+    /* border: 1px solid; */
+    margin-bottom: 20px;
+    list-style-type: none;
+    font-size: 1.4rem;
+   
+}
+
+aside section ul a{
+    color: var(--color-primary);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 80%;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+aside section ul a:hover {
+    color: rgb(253, 253, 253);
+    transform: scale(1.2);
+    background-color: var(--color-primary);
+}
+
+aside {
+    grid-area: aside;
+    /* border: 1px solid; */
+    padding: 20px;
+    /* background-color: brown; */
+}
+
+.recent-news {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.recent-news:hover {
+    transform: scale(1.2);
+}
+
+main {
+    grid-area:main;
+    padding: 20px;
+    /* background-color: aqua; */
+}
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news img {
+    width: 300px;
+}
+
+.news button {
+    background-color: var(--color-primary);
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 20px;
+    font-size: 1.5rem;
+
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
 }
