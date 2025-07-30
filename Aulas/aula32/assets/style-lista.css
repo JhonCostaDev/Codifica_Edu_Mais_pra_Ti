@@ -1,0 +1,42 @@
+* body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: brown;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    height: 20%;
+}
+
+.container {
+    background-color: whitesmoke;
+    margin: 0 auto;
+    width: 80%;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.431);
+}
+
+.container-input {
+    border: 1px solid green;
+    display: flex;
+    padding: 20px;
+}
+
+/* #form-input input{
+    border: 1px solid rgb(6, 46, 168);
+    background-color: red;
+    width: 80%;
+} */
+
+.lista-itens {
+    /* background-color: rgb(168, 168, 163); */
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
