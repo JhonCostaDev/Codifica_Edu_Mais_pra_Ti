@@ -11,15 +11,68 @@
         <img src="" alt="">
         <h2>Capítulo <span>2</span></h2>
         <h1>Integração com HTML</h1>
+        <img src="../assets/book_logo.png" alt="">
     </header>
 
     <main>
         <p>
-            Para desenvolver uma página web, devemos criar um arquivo HTML (HiperText Markup Language) contendo as tags (comandos) HTML que definem o conteúdo e a semântica dos elementos que constituem a página. Depois de salvar o arquivo, ele deverá ser aberto em um navegador web que vai renderizar (visualizar) esse documento. Nenhum processo adicional é necessário. Os códigos de programas JavaScript são desenvolvidos para adicionar um comportamento à página. Igualmente, não é preciso compilar o programa ou outra ação adicional. O próprio navegador web contém um interpretador para os programas JavaScript. Eles são inseridos nas páginas web em uma seção delimitada pelas tags &lt;script&gt; e &lt;script&gt; ou em um arquivo <strong>.js</strong> que deve ser referenciado pelo documento HTML.
+            Para desenvolver uma página web, devemos criar um arquivo HTML (HiperText Markup Language) contendo as tags (comandos) HTML que definem o conteúdo e a semântica dos elementos que constituem a página. Depois de salvar o arquivo, ele deverá ser aberto em um navegador web que vai renderizar (visualizar) esse documento. Nenhum processo adicional é necessário. Os códigos de programas JavaScript são desenvolvidos para adicionar um comportamento à página. Igualmente, não é preciso compilar o programa ou outra ação adicional. O próprio navegador web contém um interpretador para os programas JavaScript. Eles são inseridos nas páginas web em uma seção delimitada pelas tags  <code><strong>&lt;script&gt;</strong></code> e <code><strong>&lt;script&gt;</strong></code> ou em um arquivo <strong>.js</strong> que deve ser referenciado pelo documento HTML.
         </p>
 
+        <p>
+            Com JavaScript, podemos interagir de diversas formas com os usuários de páginas web. Os conceitos vistos no Capítulo 1 serão agora empregados para recuperar informações digitadas em campos de formulário de uma página e para exibir os resultados em parágrafos do documento HTML.
+            <br>
+            Nosso objetivo no livro não é produzir páginas bonitas, mas abordar os conceitos de lógica de programação utilizando a linguagem JavaScript. Caso você já possua conhecimentos em HTML e deseje melhorar o visual dos exemplos, ótimo. Caso você ainda não possua esses conhecimentos, dos exemplos, ótimo. Caso você ainda não possua esses conhecimentos, fique tranquilo. Entenda que deve dar um passo de cada vez e que o passo que você está dando ao ler este livro é muito importante para construir uma carreira pro ssional na área de TI (Tecnologia da Informação). 
+        </p>
 
+        <p>
+            Vamos acrescentar diversos comandos HTML. Alguns servem para de nira estrutura básica de uma página web. Outros, para exibir textos e campos de formulário. Novos comandos JavaScript também serão abordados. Neste contexto, é importante o uso de um editor pro ssional, como o <strong>Visual Studio Code</strong>, cujo processo de instalação foi apresentado no Capítulo 1. Um dos benefícios de um editor pro ssional é nos auxiliar na digitação dos comandos, que exigem cuidados quanto a sua sintaxe. Ao digitar as letras iniciais de um comando, o editor apresenta as opções de comandos que há àquelas letras. Ao pressionar a tecla Tab ou Enter, o editor conclui a digitação do comando selecionado. Além disso, há diversos atalhos que inserem um conjunto de códigos, como o que de ne a estrutura básica de um documento HTML de uma página web. Vamos agora criar uma nova pasta, chamada cap2, dentro da pasta livrojs, a fim de manter organizados os exemplos e exercícios deste livro. Em seguida, abra o Visual Studio Code.
+        </p>
+
+        <h3>2.1 Estrutura básica de um documento HTML</h3>
+
+        <p>
+            Para criar um novo arquivo HTML, devem ser inseridas algumas tags que de nem as seções e configurações básicas do documento. Você pode digitá-las uma vez, salvar o documento e recorrer a ele para copiar e colar essas linhas. Mas também pode fazer isso de uma forma bem mais simples.
+
+            <br>
+
+            No Visual Studio Code, inicie um novo arquivo (File / New File), salve o documento como sendo do tipo HTML (dentro da pasta cap2, com o nome ex2_1.html) e depois digite !. O editor vai apresentar um recurso que permite inserir um modelo de códigos no documento (Emmet Abbreviation), conforme ilustra a Figura 2.1. Pressione Tab ou Enter para que os comandos básicos de uma página HTML sejam inseridos, como mostra a Figura 2.2. Há outros “atalhos” para facilitar a digitação de códigos que serão vistos no decorrer do livro.
+        </p>
+        <figure>
+            <img src="../assets/vs_code_1.png" alt="captura tela do vscode" width="600px">
+            <figcaption>Figura 2.1 – Depois de salvar o documento como tipo HTML, digite !.</figcaption>
+        </figure>
+
+        <p>
+            Observe que na linha 2 é especifincado o idioma da sua página. Troque o "en" (English) para "pt-br" (Português do Brasil). Definir corretamente o idioma do documento é importante por diversos aspectos, como permitir uma melhor pronúncia por um software de leitura de tela (para portadores de necessidades especiais) e indicar ao browser o dicionário a ser utilizado para a correção gramatical de textos digitados em campos de formulário.
+        </p>
+
+        <figure>
+            <img src="../assets/vs_code_2.png" alt="captura tela do vscode" width="600px">
+            <figcaption>
+                Figura 2.2 – Ao pressionar Tab ou Enter, os comandos básicos de um documento HTML são inseridos.
+            </figcaption>
+        </figure>
+        <p>
+            Outro detalhe sobre as tags HTML é que elas geralmente são declaradas aos pares. Há <code>&lt;html&gt; e &lt;/html&gt;, &lt; head&gt; e &lt;/head&gt;, &lt;body&gt; e &lt;/body&gt;</code>. As tags &lt;head&gt; e &lt;body&gt; de nem as seções principais da página. Na seção de cabeçalho (head), foram inseridas três metatags e o título do documento que você pode alterar conforme o exemplo. O título define o texto a ser exibido em uma aba na barra superior do navegador. <code>&lt;meta charset="utf-8"&gt;</code> já foi utilizada nos exemplos do Capítulo 1 e serve para definir a página de códigos do documento. A metatag <code>&lt;meta name="viewport" ...&gt;</code> está relacionada ao processo de criação de páginas responsivas, ou seja, que respondem adequadamente aos diversos tipos de dispositivos utilizados pelos usuários, como computadores, tablets e smartphones. Já a metatag <code>&lt;meta http-equiv...&gt;</code> tem relação com os aspectos de compatibilidade entre navegadores.
+        </p>
+
+        <h3>2.2 Cabeçalhos, parágrafos e campos de formulário</h3>
+        <p>
+            Vamos acrescentar outras tags HTML ao corpo (body) do documento. Digite as seguintes linhas:
+        </p>
+        <code>
+            &lt;h1&gt;Programa Olá Você! &lt;/h1 &gt;<br>
+            &lt;p&gt;Nome: &lt;input type="text" id="nome"&gt;&lt;/p&gt; <br>
+            &lt;input type="button" value="Mostrar"&gt;&lt;/&gt;
+        </code>
+
+
+
+
+
+        <a href="videoLocadoraJS.html">Ex2_2 Vídeo Locadora JS</a>
     </main>
-    <script src="js/ex2_2.js"></script>
+    
 </body>
 </html>
