@@ -1,3 +1,4 @@
+let list = [];
 const listForm = document.getElementById('listForm');
 
 const inItem = document.getElementById('inItem');
@@ -6,12 +7,14 @@ const outList  = document.getElementById('outList');
 
 const cleanList = document.getElementById('cleanList');
 
-let list = [];
+const order = document.getElementById('order');
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const data = localStorage.getItem('listaCompras');
     list = JSON.parse(data);
     showOutput();
+    updateCount(); 
 });
 
 
@@ -24,6 +27,7 @@ listForm.addEventListener('submit', (event) => {
 
     list.push(newItem);
     saveData();
+    updateCount(); 
     showOutput();
     inItem.value = ''; // limpa o campo
 });
@@ -51,6 +55,7 @@ function showOutput() {
 function removeItem(index) {
     list.splice(index, 1);
     saveData();
+    updateCount(); 
     showOutput();
 }
 
@@ -62,7 +67,19 @@ cleanList.addEventListener('click', () => {
     if(confirm('Deseja Limpar a Lista?')) {
         list = [];
         saveData();
+        updateCount(); 
         showOutput();
         
     }
+})
+
+function updateCount() {
+    document.getElementById('count').textContent = list.length;
+}
+
+order.addEventListener('click', () => {
+    list.sort()
+    saveData();
+    updateCount(); 
+    showOutput();
 })

@@ -22,7 +22,7 @@ header {
     background-color: rgba(105, 100, 100, 0.517);
     border: 2px solid;
     width: 80%;
-    height: 50vh;
+    height: 70vh;
     margin: 0 auto;
 }
 
@@ -60,4 +60,10 @@ header {
     width: 80%;
     height: 60%;
     margin: 20px auto;
+    padding: 20px;
+}
+
+.output ul, li {
+    text-decoration: none;
+    list-style: none;
 }
