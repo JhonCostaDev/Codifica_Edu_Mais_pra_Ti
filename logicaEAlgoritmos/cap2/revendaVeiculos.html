@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Revenda de Veículos JS</title>
+</head>
+<!--Elaborar um programa para uma revenda de veículos. O programa deve ler modelo  preço do veículo. Apresentar como resposta o valor da entrada (50%) e o saldo em 12x.-->
+<body>
+    <header>
+        <h1>Revenda de Veículos JS</h1>
+
+    </header>
+
+    <main>
+        <div class="container">
+            <label>Veículo:</label>
+            <input type="text" id="inModel">
+
+            <label>Preço R$:</label>
+            <input type="number" id="inPrice">
+
+
+            <button id="btnCalc">Calcular</button>
+
+            <button id="btnClean">Nova Consulta</button>
+
+
+            <div class="output">
+                <p id="outModel"></p>
+                <p id="outDownPayment"></p>
+                <p id="outInstallments"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/ex2_3.js"></script>
+</body>
+</html>
