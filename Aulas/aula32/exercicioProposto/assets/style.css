@@ -4,15 +4,22 @@
 }
 
 body {
-    background-color: rgb(70, 78, 94);
+    background-image: url('Copilot_20250801_151334.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     font-size: 14pt;
     color: black;
 }
 
+header {
+    height: 20%;
+}
+
 .container {
-    background-color: rgb(151, 133, 133);
+    background-color: rgba(105, 100, 100, 0.517);
     border: 2px solid;
     width: 80%;
     height: 50vh;
