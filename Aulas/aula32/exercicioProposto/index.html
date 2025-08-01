@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Document</title>
 </head>
 
@@ -15,6 +16,26 @@ Adicionar funcionalidades ao app adicionar item
 * Ordenarção: Permitir ordenar alfabeticamente ou por status.
 -->
 <body>
-    
+    <header>
+        <h1>Lista de Compras</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <form action="" id="listForm">
+                <label>Item:</label>
+                <input type="text" placeholder="Insira os itens aqui..." id="inItem">
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <div class="output">
+                <ul id="outList"></ul>
+            </div>
+
+            <button id="cleanList">Limpar Lista</button>
+
+        </div>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>
