@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>Laboratório – SSM Parameter Store Hands on (CLI )</title>
+</head>
+<body>
+    <header>
+        <img src="../assets/Copilot_20250802_182927.png" alt="">
+        <h1>Laboratório – SSM Parameter Store Hands on (CLI )</h1>
+    </header>
+
+    <main>
+        <section class="instructions">
+            <h3>
+                Neste laboratório prático, você aprenderá a criar e gerenciar parâmetros utilizando o <strong>AWS Systems Manager Parameter Store</strong>, incluindo parâmetros seguros criptografados com chaves do <strong>KMS (AWS Key Management Service)</strong>, além de acessar os valores por meio da <strong>AWS CLI</strong> no <strong>CloudShell</strong>.
+            </h3>
+            <div class="part-title">
+                <h2>Objetivos do Laboratório:</h2>
+            </div>
+            <p>Este laboratório ensina como:</p>
+            <ul>
+                <li>Criar parâmetros do tipo String e SecureString no Parameter Store.</li>
+                <li>Criar uma chave de criptografia no KMS.</li>
+                <li>Recuperar os parâmetros utilizando a AWS CLI, com e sem descriptografia.</li>
+                <li>Navegar com confiança pelos principais recursos do AWS Systems
+                Manager.</li>
+            </ul>
+            <div class="part-title">
+                <h2>Cenário: </h2>
+            </div>
+            <p>
+                Você é um desenvolvedor responsável por armazenar e acessar configurações de um aplicativo, como URLs de banco de dados e senhas, de forma segura. Para isso, usará o AWS Systems Manager Parameter Store, em conjunto com o AWS KMS para criptografar dados sensíveis. Posteriormente, utilizará o AWS CloudShell para acessar esses parâmetros pela CLI.
+            </p>
+            <div class="part-title">
+                <h2>Pré-requisitos:</h2>
+            </div>
+            <ul>
+                <li>Conta AWS ativa.</li>
+                <li>Acesso ao Console de Gerenciamento da AWS.</li>
+                <li>Permissões para usar o Systems Manager, KMS e CloudShell.</li>
+            </ul>
+        </section>
+        
+        <section class="lab-execution">
+            <div class="part-title">
+                <h2>Parte 1: Criação SSM Parameter Store</h2>
+            </div>
+            <ol>
+                <li>Acesse o Console de Gerenciamento da AWS e navegue até o serviço SSM( AWS Systems Manager ).</li>
+                <img src="../assets/aws_smm_1.png" alt="">
+                <li>No painel de navegação esquerdo, localize Application Tools (Ferramentas de aplicação) e clique em Parameter store (Armazenamento de parametros).</li>
+                <img src="../assets/aws_smm_2.png" alt="">
+                <li>Clique em Create parameter (Criar parametro).</li>
+                <img src="../assets/aws_smm_3.png" alt="">
+                <li>Agora vamos criar quatro parameter store, e preencher somente os campos que estão marcado na imagem abaixo.</li>
+                <img src="../assets/aws_smm_4.png" alt="">
+                <h3>Criação de Parâmetros do Tipo String</h3>
+                <li>Agora vamos criar dois parâmetros no Parameter Store com informações de URLs de banco de dados.</li>
+                <h4>Parâmetro 1 – Ambiente de Desenvolvimento</h4>
+                <li>No campo Name, insira:</li>
+                <code>/meu-app-SeuNomeSobreNome/dev/db-url</code>
+                <li>No campo Description, insira:</li>
+                <code>Database URL for my app in dev</code>
+                <li>No campo Type, selecione:</li>
+                <code>String</code>
+                <li>No campo Value, insira:</li>
+                <code>dev.database.SeuNomeSobrenome.com:3306</code>
+                <li>Clique em Create parameter (Criar parâmetro) para salvar.</li>
+                <strong>Anote em um bloco de notas o nome do seu parâmetro, pois você precisará dessa informação em etapas futuras.</strong>
+                <h4>Parâmetro 2 – Ambiente de Produção</h4>
+                <li>Repita o processo de criação do parâmetro clicando novamente em
+                Create parameter.</li>
+                <li>No campo Name, insira:</li>
+                <code>/meu-app-SeuNomeSobreNome/prod/db-url</code>
+                <li>No campo Description, insira:</li>
+                <code>Database URL for my app in prod</code>
+                <li>14. No campo Type, selecione: <code>String</code></li>
+                <li>No campo Value, insira:</li>
+                <code>prod.database.SeuNomeSobrenome.com:3306</code>
+                <strong>Anote em um bloco de notas o nome do seu parâmetro, pois você precisará dessa informação em etapas futuras.</strong>
+                <li>Pronto! Agora temos dois parâmetros criados:</li>
+                <img src="../assets/aws_smm_5.png" alt="">
+                <li>Antes de criamos os outros 2 parâmetros, precisaremos cria uma chave KMS.</li>
+                <div class="part-title">
+                    <h2>Parte 2: Criação da Chave KMS (AWS Key Management Service)</h2>
+                </div>
+                <li>Acesse o Console de Gerenciamento da AWS e navegue até o serviço KMS (AWS Key Management Service).</li>
+                <img src="../assets/aws_smm_6.png" alt="">
+                <li>Clique no botão Create a key (Criar uma chave).</li>
+                <li>Na primeira tela, não altere nada. Clique em Next (Próximo).</li>
+                <li>
+                    Na segunda tela, preencha somente os campos:
+                    <ol type="a">
+                        <li>Alias: <code>SeuNomeSobrenome-key</code></li>
+                        <li>Description: <code>SeuNomeSobrenome-key</code></li>
+                    </ol>
+                </li>
+                <img src="../assets/aws_smm_7.png" alt="">
+                <li>Clique em Skip to review ( pular para revisão ) e depois clique em Finish (Finalizar ).</li>
+                <img src="../assets/aws_smm_8.png" alt=""> <br>
+                <strong>Vamos criar mais dois Parameter Store.</strong>
+                <h3>Parâmetro 3 – Ambiente de Desenvolvimento</h3>
+                <li>Volte ao serviço SSM ( AWS Systems Manager ).</li>
+                <li>No painel de navegação esquerdo, localize Application Tools (Ferramentas de aplicação) e clique em Parameter store (Armazenamento de parametros).</li>
+                <li>Clique em Create parameter (Criar parametro).</li>
+                <li>No campo Name, insira:</li>
+                <code>/meu-app-SeuNomeSobreNome/dev/db-password</code>
+                <li>No campo Description, coloque a descrição:</li>
+                <code>Database password for my app in dev</code>
+                <li>No campo Type, selecione a opção:</li>
+                <code>SecureString</code>
+                <li>No campo KMS key source, não altere a opção.</li>
+                <li>No campo KMS key id, procure pela chave que foi criada no passo 16.</li>
+                <li>No campo Value, coloque a informação:</li>
+                <code>aqui é a senha do dev</code>
+                <li>Clique em Create parameter (Criar parâmetro).</li>
+                <strong>Anote em um bloco de notas o nome do seu parâmetro, pois você precisará dessa informação em etapas futuras.</strong>
+                <h3>Parâmetro 4 – Ambiente de Produção</h3>
+                <li>No campo Name, insira:</li>
+                <code>/meu-app-SeuNomeSobreNome/prod/db-password</code>
+                <li>No campo Description, coloque:</li>
+                <code>Database password for my app in prod</code>
+                <li>No campo Type, selecione a opção:</li>
+                <code>SecureString</code>
+                <li>No campo Value, coloque:</li>
+                <code>aqui é a senha da prod</code>
+                <li>Clique em Create parameter (Criar parâmetro).</li>
+                <strong>Anote em um bloco de notas o nome do seu parâmetro, pois você precisará dessa informação em etapas futuras.</strong>
+                <p>Ao finalizar todas as etapas, confirme que foram criados 4 parâmetros no <strong>Parameter Store: 2 do tipo String e 2 do tipo SecureString</strong>, conforme mostrado na imagem exemplo abaixo:</p>
+                <img src="../assets/aws_smm_9.png" alt="">
+                <div class="part-title">
+                    <h2>Parte 3: Acessar o CLI pelo Cloudshell</h2>
+                </div>
+                <li>Acesse o Console de Gerenciamento da AWS e navegue até o serviço CloudShell ( AWS CLOUDSHELL ).</li>
+                <img src="../assets/aws_ssm_10.png" alt="">
+                <li>Na tela, será exibido o terminal do AWS CLI dentro da própria plataforma da AWS. Vamos começar a executar alguns comandos.</li>
+                <li>Na tela, será exibido o terminal do AWS CLI dentro da própria plataforma da AWS. Vamos começar a executar alguns comandos.</li>
+                <li>Digite o seguinte comando:</li>
+                <code>aws ssm get-parameters --names /meu-app-SeuNomeSobreNome/dev/db-url /meu-app-SeuNomeSobreNome/dev/db-password</code> <br>
+                <strong>Observe que você deve substituir os campos destacados em amarelo pelos nomes exatos dos parâmetros que você criou nos passos
+                anteriores.</strong>
+                <li>Pressione Enter.</li>
+                <li>Verifique se o resultado exibido é semelhante ao da imagem abaixo.</li>
+                <img src="../assets/aws_ssm_11.png" alt="">
+                <p><strong>Observe que as informações exibidas no campo “Value” estão em formatos diferentes: uma está descriptografada e a outra aparece criptografada.</strong></p>
+                <h5>Agora vamos <strong>descriptografar</strong> a informação que aparece criptografada, utilizando o mesmo comando anterior, com um acréscimo no final.</h5>
+                <li>Digite o seguinte comando:</li>
+                <code>aws ssm get-parameters --names /meu-app-SeuNomeSobrenome/dev/db-url /meu-app-SeuNomeSobrenome/dev/db-password --with-decryption</code> <br>
+                <p><strong>Observe que você deve substituir os campos destacados em amarelo pelos nomes exatos dos parâmetros que você criou nos passos anteriores.</strong></p>
+                <li>Pressione Enter.</li>
+                <p>Verifique se o resultado exibido na sua tela é semelhante ao da imagem abaixo.</p>
+                <img src="../assets/aws_ssm_12.png" alt="">
+                <p><strong>Se você conseguiu executar todas as etapas, parabéns!</strong></p>
+                <p><strong>Não se esqueça de excluir todos os recursos criados durante este exercício para evitar cobranças desnecessárias.</strong></p>
+            </ol>
+        </section>
+        
+        <section class="delete-resources">
+            <h3>Excluindo os Recursos</h3>
+            <ul>
+                <li>Primeiro, exclua os parâmetros. Acesse novamente a tela do Systems Manager Parameter Store (Armazém de Parâmetros), procure pelos parâmetros pelo mesmo nome e sobrenome que inseriu, selecione-os e clique em Excluir.</li>
+                <img src="../assets/aws_ssm_13.png" alt="">
+                <p>Confirme a exclusão e em Excluir parâmetros.</p>
+                <li>Depois, vá no KMS, procure pela chave com o seu nome e sobrenome e selecione-a. Após isso, clique em Ações da chave > Programar exclusão da chave.</li>
+                <img src="../assets/aws_ssm_14.png" alt="">
+                <p>Na tela seguinte, altere o Período de espera (em dias) para 7.</p>
+                <li>Mais abaixo, selecione a opção de Confirmação (Confirme se você deseja programar essas chaves para exclusão após um período de espera de 7 dias.),
+            igual na imagem abaixo:</li>
+                <li>Após isso, clique em Programar exclusão e pronto! Tudo finalizado!</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        made by Jonathan Costa &copy;2025
+    </footer>
+
+
+
+
+</body>
+</html>
