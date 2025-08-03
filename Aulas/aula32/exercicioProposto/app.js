@@ -40,6 +40,11 @@ function showOutput() {
         const span = document.createElement('span');
         span.textContent = item;
 
+        const checkBox = document.createElement('input');
+        checkBox.id = 'item-comprado'
+        checkBox.type = 'checkbox';
+        checkBox.title = 'Marcar como comprado';
+
         const btnRemove = document.createElement('button');
         btnRemove.textContent = 'x';
         btnRemove.title = 'Remover Item';
@@ -47,7 +52,7 @@ function showOutput() {
         btnRemove.addEventListener('click', () => {
             removeItem(index); //FAZER AQUI
         })
-        li.append(span, btnRemove);
+        li.append(checkBox,span, btnRemove);
         outList.appendChild(li);
     })
 }
