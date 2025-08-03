@@ -22,6 +22,7 @@ header {
     background-color: rgba(105, 100, 100, 0.517);
     border: 2px solid;
     width: 80%;
+    max-width: 700px;
     height: 70vh;
     margin: 0 auto;
 }
@@ -59,6 +60,7 @@ header {
     background-color: white;
     width: 80%;
     height: 60%;
+    overflow-y: auto;
     margin: 20px auto;
     padding: 20px;
 }
@@ -66,4 +68,29 @@ header {
 .output ul, li {
     text-decoration: none;
     list-style: none;
+}
+
+li {
+    border: 1px solid rgb(169, 176, 178);
+    border-radius: 8px;
+    background-color: rgb(169, 176, 178);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+li span {
+    color: rgb(35, 34, 34);
+    font-size: 2rem;
+}
+
+li button {
+    background-color: rgba(195, 26, 26, 0.829);
+    width: 80px;
+    font-size: 2rem;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 8px;
 }
