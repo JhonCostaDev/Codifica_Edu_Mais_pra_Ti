@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>Laboratório Amazon S3 e Acesso aos Logs</title>
+</head>
+<body>
+    <header>
+        <img src="https://www.unigui.com.br/images/AmazonS3.png" alt="">
+        <h1>Laboratório Amazon S3 Básico, Avançado e Acesso aos Logs</h1>
+    </header>
+
+    <main>
+        <section class="instructions">
+            <p>
+                Neste laboratório prático, você aprenderá a utilizar os principais recursos do Amazon S3
+voltados à organização, segurança e gerenciamento eficiente de dados. Serão abordadas práticas recomendadas para criação de buckets com configurações seguras, controle de versões de arquivos, automação de regras de ciclo de vida, e geração de URLs pré-
+assinadas para compartilhamento temporário e seguro de objetos. Além disso, será demonstrada a ativação e configuração do servidor de logs de acesso, utilizando um segundo bucket dedicado ao armazenamento dos registros de operação. Ao final, você
+estará apto a aplicar esses conhecimentos em ambientes reais, promovendo maior controle, rastreabilidade e otimização no uso do Amazon S3.
+            </p>
+
+            <h2>Objetivos do Laboratório</h2>
+
+            <p><strong>Este laboratório mostra-rá como:</strong> </p>
+            <ul>
+                <li>Criar buckets no Amazon S3 com configurações recomendadas de segurança.</li>
+                <li>Ativar e utilizar o <strong>versionamento</strong> para manter múltiplas versões de arquivos.</li>
+                <li>Configurar <strong>regras de ciclo de vida</strong> para transição e expiração de objetos.</li>
+                <li>Gerar <strong>URLs pré-assinadas</strong> para compartilhamento seguro e temporário de arquivos.</li>
+                <li>Ativar e consultar <strong>logs de acesso</strong> utilizando um segundo bucket.</li>
+            </ul>
+
+            <h2>Cenário: </h2>
+            <p>
+                Você é responsável pela gestão de armazenamento na nuvem da sua empresa. Sua missão é garantir que os dados estejam organizados, seguros e com custos otimizados. Para isso, você precisará aplicar práticas recomendadas de versionamento, automação de regras de armazenamento e monitoramento de acessos no Amazon S3.
+            </p>
+
+            <h2>Pré-requisitos</h2>
+            <ul>
+                <li>Conta ativa na AWS.</li>
+                <li>Navegador web atualizado (Chrome, Firefox, Edge, etc.).</li>
+                <li>Permissões adequadas no IAM para uso do serviço S3.</li>
+                <li>Acesso local para criação e edição de arquivos de teste (como o Lab9.txt).</li>
+                <li>Familiaridade básica com o Console de Gerenciamento da AWS.</li>
+            </ul>
+
+        </section>
+
+        <section class="lab-execution">
+            <h2>Passo 1 - Criação do Bucket (Repositório de Arquivos)</h2>
+            <h3>Acessar o console do S3:</h3>
+            <ol>
+                <li>Faça login no Console de Gerenciamento da AWS.</li>
+                <li>Na barra de pesquisa, digite "S3" e selecione o serviço "S3" nos resultados.</li>
+                <img src="../assets/s3_1.png" alt="dashboard amazon s3.">
+                <h3>Selecionar a Região AWS us-east-1 (Norte da Virgínia):</h3>
+                <li>No canto superior direito do console, verifique se a região <strong>"US East (N. Virginia)" (us-east-1)</strong> está selecionada. Caso contrário, clique no nome da região atual e escolha "US East (N. Virginia)" na lista.</li>
+                <img src="../assets/s3_2.png" alt="">
+                <h3>Criar o Bucket:</h3>
+                <li>Na página do S3, clique no botão laranja "Criar bucket".</li>
+                <img src="../assets/s3_3.png" alt="">
+                <h3>Nome do Bucket:</h3>
+                <li>Insira um nome único globalmente para o seu bucket. Por exemplo: <code>seu-nome-bucket-lab3</code> (substitua seu-nome por algo único, como seu nome ou iniciais). Anote esse nome, você precisará dele mais tarde.</li>
+                <p><strong>Importante</strong>: Os nomes de bucket devem seguir regras específicas. Use apenas letras minúsculas, números, pontos (.) e hífens (-).</p>
+                <img src="../assets/s3_5.png" alt="">
+                <h3>Configurações do Bucket:</h3>
+                <li><strong>Região da AWS:</strong> Mantenha "US East (N. Virginia) us-east-1".</li>
+                <li><strong>Propriedade do objeto:</strong> Mantenha como ACLs desabilitadas (recomendado).</li>
+                <li><strong>Bloquear acesso público:</strong> Marque a opção "Bloquear todo o acesso público". Isso
+é uma boa prática de segurança.</li>
+                <img src="../assets/s3_4.png" alt="">
+                <li><strong>Versionamento de bucket:</strong> Deixe como Desativar. Vamos ativar posteriormente.</li>
+                <li><strong>Tags: </strong>Não é necessário adicionar tags neste laboratório.</li>
+                <li><strong>Criptografia padrão:</strong> Criptografia do lado do servidor com chaves gerenciadas do
+Amazon S3 (SSE-S3) - NÃO ALTERAR.</li>
+                <img src="../assets/s3_6.png" alt="">
+                <li><strong>Chave do bucket:</strong> Mantenha o padrão.</li>
+                <li><strong>Configurações avançadas - Bloqueio de objeto:</strong> Mantenha desativado.</li>
+                <h3>Criar o Bucket:</h3>
+                <li>Revise todas as configurações.</li>
+                <li>Clique no botão "Criar bucket" na parte inferior da página.</li>
+
+                <h2>Passo 2 - Upload de Arquivos e Versionamento</h2>
+                <h3>Acessar o Bucket:</h3>
+                <li>Na lista de buckets, encontre e clique no nome do bucket que você acabou de criar.</li>
+                <img src="../assets/s3_7.png" alt="">
+                <h3>Criação do Arquivo de Teste (Lab3.txt):</h3>
+                <li><strong>Local:</strong> Vá para a "Área de Trabalho" (Desktop) do seu computador.</li>
+                <li><strong>Novo Arquivo: </strong>Clique com o botão direito do mouse em uma área vazia, selecione <strong>"Novo"</strong> e depois <strong>"Documento de Texto"</strong>.</li>
+                <li><strong>Nome do Arquivo:</strong> Nomeie o arquivo como <strong>Lab9.txt.</strong></li>
+                <li><strong>Conteúdo</strong>: Abra o arquivo Lab9.txt com um editor de texto (como o Bloco de Notas).</li>
+                <li><strong>Primeira Versão:</strong> Dentro do arquivo, digite a frase: <strong>Versão 1</strong>.</li>
+                <li><strong>Salvar</strong>: Salve as alterações no arquivo.</li>
+                <h3>Upload do Arquivo para o Bucket S3:</h3>
+                <li><strong>Iniciar o Upload:</strong> Dentro do seu bucket, clique no botão "Carregar".</li>
+                <img src="../assets/button_s3.png" alt="">
+                <li><strong>Adicionar Arquivos:</strong> Arraste e solte o arquivo Lab9.txt da sua Área de Trabalho para a área indicada ou clique em "Adicionar arquivos", navegue até a Área de Trabalho, selecione Lab9.txt e clique em "Abrir".</li>
+                <li><strong>Configurações</strong>: Mantenha as configurações padrão.</li>
+                <li><strong>Confirmar o Upload</strong>: Clique no botão "Carregar" na parte inferior da página.</li>
+                <img src="../assets/s3_8.png" alt="">
+                <h3>Verificação:</h3>
+                <li>Após o upload ser concluído, você verá o arquivo Lab9.txt listado no seu bucket.</li>
+                <h3>Habilitar o Versionamento:</h3>
+                <li>Dentro do seu bucket, clique na aba "<strong>Propriedades</strong>".</li>
+                <li>Encontre a seção "<strong>Versionamento de bucket</strong>" e clique em "<strong>Editar</strong>".</li>
+                <img src="../assets/s3_9.png" alt="">
+                <li>Selecione "<strong>Ativar</strong>" e clique em "<strong>Salvar alterações</strong>".</li>
+                <img src="../assets/versionamento.png" alt="">
+                <h3>Upload de uma Nova Versão do Arquivo:</h3>
+                <li><strong>Editar o Arquivo:</strong> Abra o arquivo Lab9.txt na sua Área de Trabalho.</li>
+                <li><strong>Segunda Versão</strong>: Adicione uma nova linha com o texto: Versão 2.</li>
+                <li><strong>Salvar</strong>: Salve as alterações.</li>
+                <li><strong>Upload</strong>: Repita os <strong>passos 23</strong> para fazer o upload do arquivo Lab9.txt atualizado para o seu bucket. O S3 agora armazenará ambas as versões.</li>
+
+                <h3>Acessar o Histórico de Versões e Restaurar uma Versão Anterior:</h3>
+                <p>Acesse aba objetos no menu superior:</p>
+                <img src="../assets/s3_10.png" alt="">
+                <li><strong>Mostrar Versões</strong>: Dentro do seu bucket, marque a opção "<strong>Mostrar versões</strong>".</li>
+                <li>Você agora verá as diferentes versões do seu arquivo Lab9.txt.</li>
+                <img src="../assets/s3_11.png" alt="">
+                <li><strong>Detalhes da Versão</strong>: Clique na versão mais antiga (aquela que contém apenas "Versão 1"). Você verá opções para abrir ou fazer download dessa versão.</li>
+                <li><strong>Restaurar uma Versão Anterior:</strong>
+                    <ul>
+                        <li>Selecione a versão que deseja restaurar (a versão com "Versão 1").</li>
+                        <li>Clique no botão "Baixar" para fazer o download dessa versão para o seu
+computador.</li>
+                        <li>Você pode agora fazer o upload dessa versão para o bucket, efetivamente
+restaurando-a como a versão mais recente se desejar. Você irá notar que o
+arquivo recém carregado terá um novo ID de versão, enquanto as versões
+anteriores serão mantidas na lista.</li>
+                    </ul>
+                </li>
+                <img src="../assets/s3_12.png" alt="">
+                <p><strong>Importante</strong>: Embora o download permita que você recupere uma versão antiga, ele não a define como a atual diretamente no S3. Você precisaria re-upar a versão baixada, se quiser que ela seja a atual.</p>
+
+            <h2>Passo 3 - Regra de Ciclo de Vida</h2>
+
+            <h3>Acessar a aba "Gerenciamento":</h3>
+                <li>Dentro do seu bucket, clique na aba "Gerenciamento".</li>
+
+                <h3>Criar uma Regra de Ciclo de Vida:</h3>
+                <li>Em “<strong>Regras de ciclo de vida</strong>”, clique no botão "Criar regra de ciclo de vida".</li>
+                <img src="../assets/s3_13.png" alt="">
+                <h3>Configurar a Regra:</h3>
+                <li><strong>Nome da regra de ciclo de vida</strong>: Dê um nome descritivo, por exemplo: <code>MoverParaGlacierApos30Dias</code>.</li>
+                <li><strong>Escolha um escopo para esta regra</strong>: Selecione “Aplicar a todos os objetos no bucket”.</li>
+                <li>Após isso, selecione a caixa "<strong>
+                    Reconheço que esta regra se aplicará a todos os
+                    objetos no bucket
+                </strong>":</li>
+                <img src="../assets/s3_14.png" alt="">
+                <li>Na seção “<strong>Ações de regras de ciclo de vida</strong>: Marque a opção: "<strong>
+                    Transição de versões atuais de objetos entre classes de
+                    armazenamento
+                </strong>".
+            <ul>
+                <li>Marque a opção “<strong>Expirar versões atuais de objetos</strong>”.</li>
+                <li>Após isso, selecione a caixa “<strong>
+                    Reconheço que essa regra de ciclo de vida
+                    resultará em um custo de transição por solicitação”
+                </strong>:</li>
+                <img src="../assets/s3_15.png" alt="">
+                <li>Na seção “<strong>
+                    Transição de versões atuais de objetos entre classes de
+                    armazenamento
+                </strong>”:
+                
+                <ul>
+                    <li>No campo “<strong>Escolher transições de classes de armazenamento</strong>”,
+selecione “<strong>Glacier Instant Retrieval</strong>”.</li>
+                <li>No campo “<strong>Dias depois da criação do objeto</strong>”, digite a <strong>30</strong>.</li>
+                </ul></li>
+                <li>Na seção “<strong>Expirar versões atuais de objetos</strong>”?
+                <ul>
+                    <li>Mantenha <strong>Dias após a criação do objeto</strong> com valor <strong>31</strong> (precisa ser
+1 dia a mais dos dias determinados na transição).</li>
+</ul>
+</li>
+<li><strong>Revisar</strong>: Revise as configurações da regra.</li>
+            <img src="../assets/s3_16.png" alt="">
+            </ul></li>
+            <h3>Criar a Regra:</h3>
+            
+                <li>Clique no botão "Criar regra".</li>
+                <img src="../assets/s3_17.png" alt="">
+                <p>Essa configuração tem como objetivo otimizar custos e automatizar a gestão do
+armazenamento no Amazon S3. Ao mover os objetos para a classe Glacier Instant Retrieval
+após 30 dias, é possível reduzir significativamente os custos de armazenamento de
+arquivos que não precisam de acesso frequente. Logo em seguida, ao excluir os arquivos
+no 31o dia, evitamos manter dados desnecessários ocupando espaço e gerando custos
+contínuos.</p>
+
+<h2>Passo 4 - URLs Pré-assinadas</h2>
+
+<h3>Selecionar um Objeto:</h3>
+                <li>Volte para a aba "<strong>Objetos</strong>" do seu bucket.</li>
+                <li>Desmarque a opção "<strong>Listar versões</strong>" para facilitar a visualização.</li>
+                <li>Clique no nome do arquivo <strong>Lab9.txt</strong> (a versão mais recente).</li>
+                <h3>Gerar uma URL Pré-assinada:</h3>
+                <p><strong>Observação</strong>: As URLs pré-assinadas são uma ferramenta poderosa e segura para
+compartilhar objetos do S3 de forma temporária e controlada. Elas são úteis em diversos
+cenários, desde o compartilhamento simples de arquivos com usuários externos até a
+integração com aplicações que precisam de acesso temporário a recursos armazenados
+no S3. Elas eliminam a necessidade de compartilhar credenciais da AWS e ajudam a
+manter seus buckets privados e seguros.</p>
+                <li>Clique no botão "<strong>Ações</strong>".</li>
+                <li>Selecione "<strong>Compartilhar com um URL pré-assinado</strong>".</li>
+                <h3>Configurar a Data de Expiração:</h3>
+                <li>Em "<strong>Tempo de expiração</strong>", você pode definir por quanto tempo o link será válido.
+Para este exemplo, você pode deixa a caixa de seleção em <strong>“Minutos”</strong> e definir um
+período curto, como <strong>1</strong>.</li>
+<img src="../assets/s3_18.png" alt="">
+<h3>Gerar a URL:</h3>
+                <li>Clique no botão "<strong>Criar URL pré-assinado</strong>".</li>
+                <h3>Copiar e Testar a URL:</h3>
+                <li>Copie a URL gerada.</li>
+                <li>Abra uma janela anônima/privada no seu navegador (para simular um usuário externo que não está logado na AWS).</li>
+                <li>Cole a URL na barra de endereços e pressione Enter.</li>
+                <img src="../assets/s3_19.png" alt="">
+                <li>Você deve conseguir visualizar ou baixar o arquivo <strong>Lab9.txt</strong>. Após o tempo de
+expiração definido, a URL não funcionará mais.</li>
+
+<h2>Passo 5: Criação do Bucket (para Logs de acesso)</h2>
+<h3>Acessar o console do S3:</h3>
+                <li>Volte ao console do Amazon S3.</li>
+                <h3>Selecionar a Região AWS us-east-1 (Norte da Virgínia):</h3>
+                <li>No canto superior direito do console, verifique se a região "<strong>US East (N. Virginia)</strong>" (us-east-1) está selecionada. Caso contrário, clique no nome da região atual e escolha "US East (N. Virginia)" na lista.</li>
+                <h3>Criar o Bucket para ser usado como servidor de logs:</h3>
+                <li>Na página do S3, clique no botão laranja "Criar bucket".</li>
+
+                <h3>Nome do Bucket:</h3>
+                <li>Insira um nome único globalmente para o seu bucket. Por exemplo: <code>
+                    s3-access-logs-
+                    seu-nome
+                </code> (substitua seu-nome por algo único, como seu nome ou iniciais). Anote esse nome, você precisará dele mais tarde.</li>
+                <p><strong>Importante</strong>: Os nomes de bucket devem seguir regras específicas. Use apenas letras minúsculas, números, pontos (.) e hífens (-).</p>
+
+                <h3>Configurações do Bucket:</h3>
+                <li><strong>Propriedade do objeto:</strong> Mantenha como ACLs desabilitadas (recomendado).</li>
+                <li><strong>Bloquear acesso público</strong>: Marque a opção "Bloquear todo o acesso público". Isso
+é uma boa prática de segurança.</li>
+                <li><strong>Versionamento de bucket:</strong> Deixe como Desativar.</li>
+                <li><strong>Tags</strong>: Não é necessário adicionar tags neste laboratório.</li>
+                <li><strong>Criptografia padrão</strong>: Criptografia do lado do servidor com chaves gerenciadas do
+Amazon S3 (SSE-S3) - NÃO ALTERAR.</li>
+                <li><strong>Chave do bucket</strong>: Mantenha o padrão.</li>
+                <li><strong>Configurações avançadas - Bloqueio de objeto</strong>: Mantenha desativado.</li>
+
+                <h3>Criar o Bucket:</h3>
+                <li>Revise todas as configurações.</li>
+                <li>Clique no botão "<strong>Criar bucket</strong>" na parte inferior da página.</li>
+                <img src="../assets/s3_20.png" alt="">
+
+                <h2>Passo 6 - Configuração do Bucket para Logs de Acesso (S3-
+access-logs)</h2>
+
+<h3>Configuração do Bucket para Logs de Acesso (S3-access-logs)</h3>
+                <h4>Ativar o Registro de Acesso ao Servidor</h4>
+                <li>Acesse o <strong>primeiro bucket</strong> criado no laboratório.</li>
+                <li>Clique na aba "<strong>Propriedades</strong>".</li>
+                <li>Role a página até encontrar a seção "<strong>Registro em log de acesso ao servidor</strong>".</li>
+                <img src="../assets/s3_21.png" alt="">
+                <li>Clique em "<strong>Editar</strong>" e marque a opção "<strong>Ativar</strong>".</li>
+                <li>Em <strong>“Destino”</strong> clique no botão <strong>"Procurar no S3</strong>" para escolher o bucket de
+destino dos logs.</li>
+                <li>Selecione o seu segundo bucket criado (por exemplo: <code>s3-access-logs-seu-nome</code>).</li>
+                <li>Clique em "Escolher destino".</li>
+                <li>Revise as configurações e clique em "<strong>Salvar alterações</strong>".</li>
+                <img src="../assets/s3_22.png" alt="">
+
+                <h2>Passo 7 - Gerar Logs com Upload de Arquivo</h2>
+
+                <li>Acesse novamente o <strong>primeiro bucket</strong>.</li>
+                <li>Clique em "<strong>Carregar</strong>", depois em "<strong>Adicionar arquivos</strong>".</li>
+                <li>Selecione uma imagem ou qualquer outro arquivo do seu computador.</li>
+                <li>Clique em "<strong>Carregar</strong>" para concluir o upload.</li>
+                <li>Após o envio da imagem, aguarde cerca de <strong>1 hora e 30 minutos</strong> para que os logs comecem a ser gerados no bucket de logs <code>(s3-access-logs-seu-nome)</code>.</li>
+                <li>Após aguardar o tempo necessário, volte ao seu bucket “<code>
+                    s3-access-logs-seu-
+                    nome
+                </code>”.</li>
+                <li>Você verá um resultado parecido com a imagem abaixo:</li>
+                <p><span class="conclued">
+                    Se a sua tela estiver semelhante à apresentada, isso indica que você concluiu o laboratório
+                    com sucesso.
+                </span></p>
+                
+            </ol>
+            <p><strong>Para informação</strong>: Não é possível configurar ou reduzir o intervalo de entrega desses logs.</p>
+
+<ul>
+    <li>
+        A AWS informa que a entrega dos logs é eventual – geralmente dentro de
+        algumas horas após a atividade registrada.
+    </li>
+    <li>
+        Em muitos casos, eles demoram entre 1 a 2 horas, mas isso não é garantido
+        nem personalizável.
+    </li>
+    <li>Esse comportamento é padrão do serviço.</li>
+    <li>Para mais informações, leia a documentação oficial.</li>
+</ul>
+
+<p>
+    Ao entender o propósito de cada etapa, você estará mais preparado para tomar decisões
+    informadas sobre o gerenciamento de dados no Amazon S3 em cenários do mundo real.
+    Lembre-se de sempre considerar as necessidades específicas de cada empresa ao
+    configurar os serviços da AWS.
+</p>
+<p>
+    Lembre-se de excluir os recursos criados neste laboratório após concluir as tarefas
+    para evitar custos desnecessários.
+</p>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
