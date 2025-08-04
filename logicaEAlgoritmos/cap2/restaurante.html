@@ -1,0 +1,34 @@
+<!--   ENUNCIADO:
+   Elaborar um programa para um restaurante que leia o preço por kg e o consumo (em gramas) de cum cliente. Exiba o valor a ser pago.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Restaurante JS</title>
+</head>
+<body>
+    <header>
+        <h1>Restaurante JS</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="formIn">
+                <label>Buffet por Kg R$:</label>
+                <input type="number" id="inValorKilo">
+                <label>Consumo do cliente (gramas):</label>
+                <input type="number" id="InConsumo">
+                <button type="submit">Calcular Preço</button>
+            </form>
+                <div class="output">
+                    <p id="outTotal"></p>
+                </div>
+        </div>
+    </main>
+    <script src="js/ex2_4.js"></script>
+</body>
+</html>

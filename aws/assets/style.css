@@ -68,14 +68,14 @@ code {
     margin: 5px;
 }
 
-.instructions {
+/* .instructions {
     
     
 
 }
 .lab-execution {
 
-}
+} */
 
 .part-title {
     width: 100%;
@@ -84,9 +84,9 @@ code {
     text-align: center;
 }
 
-.delete-resources {
+/* .delete-resources {
 
-}
+} */
 
 footer {
     /* border: 1px solid; */
