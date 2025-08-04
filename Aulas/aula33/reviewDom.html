@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>DOM - Document Object Model e BOM - Browser Object Model</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="changeTitle">Título Original</h1>
+        <button onclick="changeTitle()">Alterar Título</button>
+    </div>
+
+    <script>
+        const title = document.querySelector("#changeTitle");
+
+        function changeTitle() {
+            title.textContent = 'New Title';
+        }
+    </script>
+</body>
+</html>
