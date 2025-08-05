@@ -1,10 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
+
 body {
     width: 100vw;
     height: 100vh;
+    font-size: 16pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -33,7 +37,43 @@ aside {
 main {
     border: inherit;
     grid-area: main;
+    padding: 20px;
     
+}
+
+h2 {
+    text-decoration: underline;
+    font-size: 3rem;
+}
+
+.destaque {
+    font-style: italic;
+    background-color: gray;
+    padding: 2px;
+    color: white;
+    border-radius: 8px;
+}
+
+.main-news {
+    margin: 20px 0;
+    width: 80%;
+}
+
+.code {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.import {
+    color:blueviolet;
+    font-weight: bold;
+}
+
+.nameFunction {
+    color: green;
+    font-weight: bold;
 }
 
 footer {
