@@ -7,17 +7,117 @@
     <title>DOM - Document Object Model e BOM - Browser Object Model</title>
 </head>
 <body>
-    <div class="container">
-        <h1 id="changeTitle">Título Original</h1>
-        <button onclick="changeTitle()">Alterar Título</button>
-    </div>
+    <header>
+        <h1>DOM - Document Object Model e BOM - Browser Object Model</h1>
+    </header>
+    <section>
+        <div class="container">
+            <h2 id="changeTitle">Quote's of the day</h2>
+            <p id="quote"></p>
+            <button onclick="changeTitle()">Quote's day</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Counter</h2>
+            <ul id="list"></ul>
+            <button onclick="addItem()">Add Item</button>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <h2>Mundial de Clubes</h2>
+            <p id="sentence">Palmeiras</p>
+            
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <button onclick="showWelcomeMessage()">Show welcome message</button>
+
+            <button onclick="showInfo()">Mostrar Informações</button>
+            <pre id="output"></pre>
+
+        </div>
+    </section>
 
     <script>
+        
+        const listQuotes =[
+            "To be or not to be, that is the question. – William Shakespeare",
+            "I have a dream. – Martin Luther King Jr.",
+            "The only thing we have to fear is fear itself. – Franklin D. Roosevelt",
+            "That's one small step for man, one giant leap for mankind. – Neil Armstrong",
+            "Injustice anywhere is a threat to justice everywhere. – Martin Luther King Jr.",
+            "Stay hungry, stay foolish. – Steve Jobs",
+            "Be yourself; everyone else is already taken. – Oscar Wilde",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+            "Imagination is more important than knowledge. – Albert Einstein",
+            "Life is what happens when you're busy making other plans. – John Lennon"
+        ]
+        //quote
         const title = document.querySelector("#changeTitle");
+        const quote = document.querySelector("#quote");
+
+        //counter
+        const list = document.querySelector("#list");
+        let count = 1;
+
+        // p
+        const p = document.getElementById("sentence");
+
+        //
+
+
+        p.addEventListener('mouseover', () => {
+            p.classList.add('focus');
+
+        })
+
+        p.addEventListener('mouseout', () => {
+            p.classList.remove('focus');
+        })
+
 
         function changeTitle() {
-            title.textContent = 'New Title';
+            let indexQuote = listQuotes[Math.floor(Math.random() * listQuotes.length)];
+            quote.textContent = indexQuote;
         }
+
+        function addItem() {
+            const item = document.createElement("li");
+            item.textContent = `Item ${count++}`;
+            list.appendChild(item);
+        }
+
+        function showWelcomeMessage() {
+            alert("Welcome");
+            const name = prompt("What's your name?");
+
+
+            if (confirm(`Confirm name: ${name}`)) {
+                alert(`Welcome ${name}`);
+            }
+        }
+
+        function showInfo() {
+            let info = {
+                userAgent: navigator.userAgent,
+                plataform: navigator.platform,
+                language: navigator.language,
+                screenWidth: screen.width,
+                height: screen.height
+            }
+                //TODO: RESOLVER ISSO AQUI
+            document.getElementById('output').textContent = JSON.stringify(info, null, 2);
+            
+        }
+
+        
     </script>
 </body>
 </html>

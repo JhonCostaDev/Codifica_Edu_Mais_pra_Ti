@@ -2,6 +2,7 @@ body {
     background-color: rgb(47, 46, 46);
     color: rgb(234, 180, 180);
     width: 100vw;
+    font-size: 16pt;
 }
 
 .container {
@@ -24,4 +25,10 @@ body {
 
 .container button:hover {
     background-color: rgba(212, 26, 26, 0.623);;
+}
+
+.focus {
+    background-color: white;
+    color: black;
+    font-size: 2rem;
 }
