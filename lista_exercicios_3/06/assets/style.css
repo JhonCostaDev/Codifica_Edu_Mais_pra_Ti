@@ -6,6 +6,7 @@
 body {
     background-color: black;
     color: white;
+    font-size: 16pt;
 }
 
 .container {
@@ -25,12 +26,12 @@ header {
 }
 
 aside {
-    background-color: rgb(115, 105, 105);
+    background-color: rgba(115, 105, 105, 0.357);
     grid-area: aside;
 }
 
 main {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     display: flex;
     justify-content: space-between;
 }
@@ -42,7 +43,7 @@ footer {
 
 .galery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     padding: 20px;
 }
@@ -50,6 +51,18 @@ footer {
 figure img{
     width: 300px;
     height: 150px;
+}
+
+li {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    
+}
+
+a {
+    text-decoration: none;
+    font-size: ;
 }
 
 
