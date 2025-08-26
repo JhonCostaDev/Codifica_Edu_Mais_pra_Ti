@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="container">
-            <button id="navToggle" class="nav-toggle" aria-label="abrir menu">+</button>
+            <button id="navToggle"  aria-label="abrir menu">+</button>
             <nav>
             <ul>
                 <li><a href="#">Início</a></li>
@@ -23,42 +23,61 @@
     </header>
     
     <main>
-        <section class="hero container">
-            <h1>Bem-vindo ao nosso site!</h1>
-
-            <p>Oferecemos soluções na área de tecnologia.</p>
-            <button>Fale Conosco</button>
+        <section class="hero">
+            <div class="container">
+                <h1>Bem-vindo ao nosso site!</h1>
+                <p>Oferecemos soluções na área de tecnologia.</p>
+                <button>Fale Conosco</button>
+            </div>
 
         </section>
 
-        <section>
+        <section class="services container">
             <h2>Nossos Serviços</h2>
 
-            <div class="card">
-                <h3>Desenvolvimento Back-End</h3>
-                <p>APIs seguras e performance otimizada.</p>
-            </div>
-
-            <div class="card">
-                <h3>Desenvolvimento Front-End</h3>
-                <p>Interfaces amigáveis e responsivas.</p>
-            </div>
-
-            <div class="card">
-                <h3>Consultoria</h3>
-                <p>Planejamento e Arquitetura de Projetos.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Desenvolvimento Back-End</h3>
+                    <p>APIs seguras e performance otimizada.</p>
+                </div>
+                <div class="card">
+                    <h3>Desenvolvimento Front-End</h3>
+                    <p>Interfaces amigáveis e responsivas.</p>
+                </div>
+                <div class="card">
+                    <h3>Consultoria</h3>
+                    <p>Planejamento e Arquitetura de Projetos.</p>
+                </div>
             </div>
 
         </section>
 
-        <h2>Contato</h2>
-        <form action="">
-            <label for="">Nome Completo: <input type="text"></label>
-            <label for="">E-mail: <input type="email" name="" id=""></label>
+        <section id='contact' class="contact container">
+            <h2>Contato</h2>
+            <form action="" id="contactForm">
+                <div class="form-group">
+                    <label for="">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-msg"></span>
+                </div>
 
-            <label for="">Sua Mensagem:</label>
-            <textarea name="" id=""></textarea>
-        </form>
+
+                <div class="form-group">
+                    <label for="">E-mail: </label>
+                    <input type="email" name="email" id="email" required>
+                    <span class="error-msg"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="">Sua Mensagem:</label>
+                    <textarea name="message" id="message" rows="4" required></textarea>
+                    <span class="error-msg"></span>
+                </div>
+                
+                <button>Enviar Mensagem</button>
+            </form>
+        </section>
 
     </main>
 

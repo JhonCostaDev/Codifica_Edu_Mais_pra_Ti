@@ -1,12 +1,102 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
-    background-color: rgba(0, 0, 0, 0.511);
+    background-color: #f4f4f4;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    /* display: flex; */
+    
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: 1rem;
+    
+}
+
+nav a{
+    color: #333;
+    padding: 1rem;
+    display: block;
 }
 
 .container {
     width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#navToggle {
+    font-size: 1.5rem;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.services {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid#ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.contact {
+    padding: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, textarea {
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    height: 1em;
+}
+
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 1rem 0;
 }
