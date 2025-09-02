@@ -8,7 +8,7 @@ public class SomaDiagonaisMatriz {
 
         for(int i = 0; i < matrix.length; i++) {
             for(int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j]);
+                //System.out.print(matrix[i][j]);
             }
         }
         System.out.println("");
@@ -17,7 +17,7 @@ public class SomaDiagonaisMatriz {
         for(int i = 0; i < matrix.length; i++) {
             for(int j = 0; j < matrix[i].length; j++) {
                 if (j % 2 == 0) {
-                    //soma += matrix[i][j];
+                    soma += matrix[i][j];
                     System.out.println(matrix[i][j]);
                 }
             }
