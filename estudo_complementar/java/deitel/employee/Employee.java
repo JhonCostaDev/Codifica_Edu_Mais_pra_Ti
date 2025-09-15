@@ -35,7 +35,7 @@ public class Employee {
 		if(salary > 0) {
 			this.salary = salary;
 		} else {
-			continue;
+			//continue;
 		}
 		
 	}
@@ -49,7 +49,7 @@ public class Employee {
 		return surName;
 	}
 
-	public String getSalary(){
+	public double getSalary(){
 		return salary;
 	}
 }
