@@ -4,4 +4,4 @@
 
 # Repositório bootcamp codifica +Prati
 
-[Notion - Resumo das aulas](https://spice-erigeron-f0d.notion.site/PraTI-Resumo-das-Aulas-Material-Complementar-1d902c39880d807f8ff7c73bb353f1d0)
+[Notion - Resumo das aulas](https://spice-erigeron-f0d.notion.site/PraTI-Resumo-das-Aulas-Material-Complementar-1d902c39880d807f8ff7c73bb353f1d0)add from winWsl2
