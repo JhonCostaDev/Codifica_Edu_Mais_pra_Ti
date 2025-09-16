@@ -17,25 +17,30 @@ public class Calculator {
     System.out.println("Digite o segundo número: ");
     int numberTwo = input.nextInt();
     
-    int result;
+    int result = 0;
+    String operation = "";
     switch (option) {
         case 1:
             result = add(numberOne, numberTwo);
+            operation = "Soma";
             break;
         case 2:
             result = subtract(numberOne, numberTwo);
+            operation = "Subtração";
             break;
         case 3:
             result = multiply(numberOne, numberTwo);
+            operation = "Multiplicação";
             break;
         case 4:
             result = divideBy(numberOne, numberTwo);
+            operation = "Divisão";
             break;
         default:
             System.out.println("Opção Inválida!");
     }
 
-    System.out.printf("A");
+    System.out.printf("A %s de %d e %d é igual a %d", operation, numberOne, numberTwo, result);
 
   }  
   public static int add(int a, int b) {
