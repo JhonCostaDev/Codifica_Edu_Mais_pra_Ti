@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "papaparse": "^5.5.2",
-    "prompt-sync": "^4.2.0"
-  }
-}
