@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(21, 13, 94);
+    color: white;
+}
+
+header {
+    display: flex;
+}
+
+.header-text {
+    
+}
