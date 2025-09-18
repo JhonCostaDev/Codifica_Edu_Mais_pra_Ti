@@ -1,3 +1,4 @@
+package Aulas.aula57.exerciciosAula57.temperatura;
 import java.util.Scanner;
 
 public class ConversorTemp {
