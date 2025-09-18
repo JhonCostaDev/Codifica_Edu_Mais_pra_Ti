@@ -23,9 +23,33 @@ public class HeartRates {
         LocalDate today = LocalDate.now();
         LocalDate birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
 
-        Period age = Period.between(today, birthDate);
+        Period age = Period.between(birthDate, today);
 
         return age.getYears();
+    }
+
+    //Calcula frequência cardíaca
+    public int maxHeartRate() {
+        return 220 - calcAge();
+    }
+
+    //Calcula frequência cardíaca alvo
+    public String targetHeartRate() {
+        double minTargetRate = maxHeartRate() * 0.5;
+        double maxTargetRate = maxHeartRate() * 0.8;
+
+        return String.format("entre %.2f e %.2f", minTargetRate, maxTargetRate);
+    }
+
+    //Exibe um resumo do paciente
+    public String showSumary() {
+        return String.format("""
+            Nome: %s
+            Sobrenome: %s
+            Idade: %d
+            Frequência Cardíaca Máxima: %d
+            Frequência Cardíaca Alvo: %s
+            """, name, surName, calcAge(), maxHeartRate(), targetHeartRate());
     }
 
     //setters
