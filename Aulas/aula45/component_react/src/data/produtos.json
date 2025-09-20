@@ -1,0 +1,52 @@
+[
+  {
+    "nome": "Controle Xbox Series X",
+    "descricao": "Controle sem fio com ergonomia aprimorada e conexão Bluetooth.",
+    "preco": 449.90
+  },
+  {
+    "nome": "Mouse Gamer Logitech G502",
+    "descricao": "Mouse com sensor HERO 25K, 11 botões programáveis e iluminação RGB.",
+    "preco": 379.99
+  },
+  {
+    "nome": "Teclado Mecânico Redragon Kumara",
+    "descricao": "Teclado compacto com switches mecânicos e iluminação LED.",
+    "preco": 229.90
+  },
+  {
+    "nome": "Headset HyperX Cloud II",
+    "descricao": "Fone com som surround 7.1, microfone removível e almofadas confortáveis.",
+    "preco": 499.00
+  },
+  {
+    "nome": "Cadeira Gamer ThunderX3",
+    "descricao": "Cadeira ergonômica com apoio lombar e design inspirado em carros esportivos.",
+    "preco": 1299.00
+  },
+  {
+    "nome": "Monitor Gamer AOC 24G2",
+    "descricao": "Monitor 144Hz, 1ms, Full HD com painel IPS e suporte ajustável.",
+    "preco": 1099.90
+  },
+  {
+    "nome": "Placa de Vídeo RTX 3060",
+    "descricao": "GPU da NVIDIA com 12GB GDDR6, ideal para jogos em Full HD e 2K.",
+    "preco": 2199.00
+  },
+  {
+    "nome": "Console PlayStation 5",
+    "descricao": "Console de nova geração com SSD ultrarrápido e suporte a ray tracing.",
+    "preco": 4299.00
+  },
+  {
+    "nome": "Jogo Elden Ring (PS5)",
+    "descricao": "RPG de ação em mundo aberto com combates desafiadores e narrativa profunda.",
+    "preco": 299.90
+  },
+  {
+    "nome": "Assinatura Xbox Game Pass Ultimate",
+    "descricao": "Acesso a centenas de jogos no console e PC, incluindo lançamentos.",
+    "preco": 44.99
+  }
+]
