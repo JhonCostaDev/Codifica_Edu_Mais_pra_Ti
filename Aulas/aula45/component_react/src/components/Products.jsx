@@ -3,7 +3,7 @@ import produtos from '../data/produtos.json'
     O Componente Pai(App) vai passar os dados do produto
     (Nome, Preço, Deescrição) Como props para o componente filho(Produto), e o componente filho vai exibir essas informações */}
 
-const estoque = ;
+// const estoque = ;
 
 function App(props) {
     return (
