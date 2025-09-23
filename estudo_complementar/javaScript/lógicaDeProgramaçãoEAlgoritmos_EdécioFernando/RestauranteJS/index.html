@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!--GOOGLE FONTS-->
+    <title>Restaurante JS</title>
+</head>
+<body>
+    <header>
+    </header>
+    
+    <main>
+        <div class="input">
+            <h1>Restaurante JS</h1>
+            <form id="form">
+                <div class="input-inner">
+                    <label>Buffet por Quilo:</label>
+                    <input type="number" id="precoQuilo">
+                </div>
+                <div class="input-inner">
+                    <label>Consumo do Cliente (gramas):</label>
+                    <input type="number" id="peso">
+                </div>
+                <div class="btn-center">
+                    <button type="submit" id="btn-calc">Calcular Preço</button>
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="output">
+            <p>Total a pagar: R$ <span id="output"></span></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
