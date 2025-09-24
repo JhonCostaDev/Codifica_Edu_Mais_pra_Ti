@@ -4,15 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function ViaCep() {
     const [cep, setCep] = useState("");
-    const [dados, setDados] = useState([]);
-    
+    const [dados, setDados] = useState({});
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
 
     const enviarCEP = async(e) => {
         e.preventDefault();
         
-        const url = `https://viacep.com.br/ws/${cep}/json/`
-        
-
         try {
             const response = await fetch(url);
             const json = await response.json();
@@ -40,7 +37,13 @@ export default function ViaCep() {
                 </div>
 
                 <div id="output">
-                    <pre>{JSON.stringify(dados, null, 2)}</pre>
+                    {/* <pre>{JSON.stringify(dados, null, 2)}</pre> */}
+                    <p>CEP: {dados.cep}</p>
+                    <p>Endereço: {dados.logradouro}</p>
+                    <p>Bairro: {dados.bairro}</p>
+                    <p>Cidade: {dados.localidade}</p>
+                    <p>Estado: {dados.uf}</p>
+
                 </div>
             </div>
         </>
