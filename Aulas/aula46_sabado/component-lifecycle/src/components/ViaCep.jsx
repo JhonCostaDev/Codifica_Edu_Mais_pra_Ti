@@ -3,23 +3,45 @@ import { useEffect, useState } from "react";
  */
 
 export default function ViaCep() {
-    const [cep, setCep] = useState('');
+    const [cep, setCep] = useState("");
+    const [dados, setDados] = useState([]);
+    
 
-    const findCep = () => {
-        useEffect(() => {
-            
-        })
+    const enviarCEP = async(e) => {
+        e.preventDefault();
         
-        setCep(event.target.value)
-    }
+        const url = `https://viacep.com.br/ws/${cep}/json/`
+        
 
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            
+            setDados(json);
+        } catch(erro) {
+            console.log("Erro aos buscar os dados", erro);
+        }
+
+    }
 
     return (
         <>
-            <div className="container">
-                <h2>Busca por CEP</h2>
-                <input type="text" value={cep} onChange={findCep}/>
-                <p>Valor Digitado: {cep}</p>
+            <div className="countainer">
+                <h1>Busca por CEP</h1>
+
+                <div>
+                    <form action="" onSubmit={enviarCEP}>
+                        <label htmlFor="">CEP:</label>
+                        <input type="number" id="cep" value={cep} onChange={
+                            (e) => setCep(e.target.value)
+                        }/>
+                        <button>Pesquisar</button>
+                    </form>
+                </div>
+
+                <div id="output">
+                    <pre>{JSON.stringify(dados, null, 2)}</pre>
+                </div>
             </div>
         </>
     )
