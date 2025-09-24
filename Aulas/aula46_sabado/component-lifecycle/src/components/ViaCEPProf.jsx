@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function ViaCEPProf({cep}) {
-    const [endereco, setEndereco] = useState(null);
+    const [endereco, setEndereco] = useState("");
     const [carregando, setCarregando] = useState(false);
     const [erro, setErro] = useState(null);
 
