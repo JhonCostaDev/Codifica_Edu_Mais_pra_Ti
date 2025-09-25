@@ -6,7 +6,7 @@ function ViaCEPProps(props) {
     <h1>Busca por CEP by Props</h1>
 
     <div className="container">
-        <p>{props.nome}</p>
+        <p>{props.cep}</p>
     </div>
     </>
     )

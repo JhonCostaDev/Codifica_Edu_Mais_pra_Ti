@@ -1,3 +1,4 @@
+import ViaCEPProps from "./ViaCEPProps"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <ViaCEPProps cep='60543315' />
     </>
   )
 }
