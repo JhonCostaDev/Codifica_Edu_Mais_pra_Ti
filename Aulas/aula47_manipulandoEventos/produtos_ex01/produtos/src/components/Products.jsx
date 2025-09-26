@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Products () {
     // Capturar os dados do formulário
@@ -8,22 +8,34 @@ function Products () {
         categoria: '',
         descricao: ''
     })
+
+    //const [cadastro, setCadastro] = useState([]);
+    // Carrega os dados salvos no localStorage ao iniciar
+  const [cadastro, setCadastro] = useState(() => {
+    const dadosSalvos = localStorage.getItem('cadastro');
+    return dadosSalvos ? JSON.parse(dadosSalvos) : [];
+  });
+
+  // Salva os dados no localStorage sempre que cadastro mudar
+  useEffect(() => {
+    localStorage.setItem('cadastro', JSON.stringify(cadastro));
+  }, [cadastro]);
     
-    const [cadastro, setCadastro] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => (
             {...prev, [name]: value}
         ));
+       
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(formData);
         // adiciona o novo cadastro
-        setCadastro((prev) => [...prev, formData])
-
+        setCadastro((prev) => [...prev, formData]);
+        
         //Limpar formulario
         setFormData({
         produto: '',
