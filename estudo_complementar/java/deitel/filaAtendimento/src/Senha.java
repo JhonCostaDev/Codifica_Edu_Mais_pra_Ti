@@ -15,8 +15,8 @@ public final class Senha {
         this.name = name;
         this.surName = surName;
         this.birthDate = birthDate;
-        this.uuid = generateId();
-        this.age = calcAge();
+        uuid = generateId();
+        age = calcAge();
     }
 
     //Calcula a idade
