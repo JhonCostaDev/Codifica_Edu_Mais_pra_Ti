@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #1351b4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    font-size: 16pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "SUSE Mono", sans-serif;
+    text-align: center;
+}
+header {
+    height: 20%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+}
+
+figure img {
+    width: 250px;
+    border-radius: 8px;
+}
+
+main {
+    display: flex;
+    gap:15px
+}
+
+.container-form {
+    /* border: 1px solid; */
+    max-width: 50%;
+    min-width: 800px;
+    margin: 10px auto;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-align: left;
+    
+
+}
+
+.container-form div {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.input {
+    width: 85%;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    
+}
+
+button {
+    width: 150px;
+    height: 25px;
+    border-radius: 8px;
+}
+
+.list {
+    border: 1px solid;
+    width: 50%;
+    height: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.list p {
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+    padding: 5px;
+    border: 1px solid;
+    text-align: left;
+    font-weight: bolder;
+    
+}
+
+
+ul > li {
+    border: 1px ;
+    margin: 5px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    height: 15%;
+    text-align: end;
+}
+
+
+/* .suse-mono-<uniquifier> {
+  font-family: "SUSE Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */

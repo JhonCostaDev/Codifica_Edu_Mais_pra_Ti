@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Lan House JS</title>
 </head>
 <body>
@@ -11,23 +12,23 @@
         <h1>Lan House JS</h1>
     </header>
     <main>
-        <div class="inputs">
+        <div class="container">
             <form action="" id="form">
                 <div>
                     <label for="">Valor por 1/4 de hora:</label>
-                    <input type="number" step="any" id="hourPrice">
+                    <input type="number" step="any" id="hourPrice" class="inputs">
                 </div>
 
                 <div>
                     <label for="">Tempo gasto pelo cliente:</label>
-                    <input type="number" step="any" id="timeSpent">
+                    <input type="number" step="any" id="timeSpent" class="inputs">
                 </div>
                 <button type="submit">Calcular</button>
             </form>
         </div>
 
         <div id="output">
-
+            <p>Total a pagar: </p>
         </div>
     </main>
     <footer></footer>
