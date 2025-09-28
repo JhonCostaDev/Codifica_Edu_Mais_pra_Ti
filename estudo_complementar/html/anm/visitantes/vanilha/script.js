@@ -1,3 +1,4 @@
+//TODO: tirar esse objeto daqui e colocar em um arquivo
 const visitantes = [
     {
         name: 'luis perera',
