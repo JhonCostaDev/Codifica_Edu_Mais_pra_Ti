@@ -20,6 +20,6 @@ document.querySelector(".inputs").addEventListener("submit", (e) => {
     output.innerHTML = `
         <p>${productName} - Promoção: Leve 3 por R$${total.toFixed(2)}</p>
 
-        <p>O 3º Pproduto custa apenas R$ ${(productValue / 2).toFixed(2)}</p>
+        <p>O 3º Produto custa apenas R$ ${(productValue / 2).toFixed(2)}</p>
     `;
 })
