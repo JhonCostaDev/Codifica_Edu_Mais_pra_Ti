@@ -1,4 +1,10 @@
-
+fetch('README.md')
+    .then(response => response.text())
+    .then(markdown =>{
+        const html = marked.parse(markdown); 
+        
+        document.querySelector("#enunciado").innerHTML = html;
+    })
 
 
 document.querySelector(".inputs").addEventListener("submit", (e) => {
