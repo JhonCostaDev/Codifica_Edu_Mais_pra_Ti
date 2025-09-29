@@ -1,0 +1,2 @@
+# Supermercado JS - 2.10 -C
+Um supermercado está com promoção - Para aumentar suas vendas no setor de higiêne, cada etiqueta de produto deve exibir uma mensagem anunciando 50% de desconto (para um item) na compra de três unidades de um produto. Após, apresente as mensagens indicando a promoção conforme o exemplo ilustrado.

@@ -1,0 +1,60 @@
+:root {
+    --primary-color: rgb(113, 113, 108);
+    --primary-font-color: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    width: 100vw;
+    height: 100vh;
+    font-family: monospace;
+    font-size: 16pt;
+    /*  */
+}
+
+.container {
+    /* border: 1px solid; */
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+.inputs{
+    width: 50%;
+    border: inherit;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inputs div {
+    margin: 20px 0;
+    
+}
+
+.inputs input {
+    width: 99%;
+    height: 25px;
+    border-radius: 8px;
+}
+
+
+.output {
+    border: inherit;
+}
+
+button {
+    width: 250px;
+    font-family: inherit;
+    font-size: inherit;
+    margin: auto;
+}
