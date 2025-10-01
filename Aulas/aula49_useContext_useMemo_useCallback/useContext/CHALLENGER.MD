@@ -1,0 +1,2 @@
+Crie um mini-app que use Context API para controlar o tema "light/dark".
+Forneça um ThemeProvider e um hook useTheme; um componente alterna o tema e outro mostra o tema atual - serm passar props entre eles. Use useMemo para estabilizar value.
