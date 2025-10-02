@@ -44,6 +44,8 @@ neste vetor.
 que defina e escreva a média aritmética simples dos elementos 
 ímpares armazenados neste vetor. 
 
+15. Criar um vetor A com 10 elementos inteiros. Desenvolver um programa que defina o percentual de elementos pares e ímpares, respectivamente, armazenados neste vetor.
+
 The java project
 
 ## Estrutura
