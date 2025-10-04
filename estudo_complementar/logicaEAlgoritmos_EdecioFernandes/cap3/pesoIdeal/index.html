@@ -37,8 +37,8 @@
             
             <div class="header-container">
                
-                <div header-text>
-                    <h1 style="text-align: center;">Calculadora Peso Ideal</h1>
+                <div class="header-text">
+                    <h1>Calculadora<br> Peso Ideal</h1>
                     <p>Manter o peso ideal e adotar uma dieta saudável são atitudes fundamentais para garantir qualidade de vida e bem-estar. O equilíbrio nutricional ajuda a prevenir doenças como diabetes, hipertensão e problemas cardíacos, além de melhorar a disposição, o sono e a saúde mental. Com hábitos alimentares adequados e controle do peso, é possível viver com mais energia, autoestima e longevidade.</p>
                 </div>
                  <div class="header-image">
@@ -48,18 +48,19 @@
         </div>
     </header>
     <main>
+        <div class="explain">
+            <h3>Como é calculado?</h3>
+            <p>Para chegar no resultado do peso ideal, as seguintes fórmulas são utilizadas. Mas não se preocupe, nossa calculadora fará este trabalho para você</p>
+
+            <h3>Instruções:</h3>
+            <p><strong>Masculino</strong>: 52 + (0.75 x (altura - 152.4))</p>
+            <p><strong>Feminino</strong>: 52 + (0.67 x (altura - 152.4))</p>
+        </div>
         <div class="container">
+            <h3>Preencha os campos: </h3>
             <div class="inputs">
                 <label for="">Nome:</label>
                 <input type="text" id="name">
-            </div>
-
-            <div class="">
-                <label for=":">Sexo:</label>
-                
-                <label for=""><input type="radio" name="gender" id="" value="male">Masculino</label>
-                
-                <label for=""><input type="radio" name="gender" id="" value="female" checked>Feminino</label>
             </div>
 
             <div class="inputs">
@@ -67,14 +68,22 @@
                 <input type="number" name="" id="height" step="any">
             </div>
 
-            <div class="inputs">
+            <div class="radius">
+                <label for=":">Sexo:</label>
+                
+                <label for=""><input type="radio" name="gender" id="" value="male">Masculino</label>
+                
+                <label for=""><input type="radio" name="gender" id="" value="female" checked>Feminino</label>
+            </div>
+
+            <div class="inputs-buttons">
                 <button onclick="idealWeight()">Calcular Peso Ideal</button>
                 <button onclick="cleanApp()">Limpar Campos</button>
             </div>
         </div>
 
         <div class="results">
-
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, voluptas. Quae, veritatis? Nostrum fugiat sapiente quidem, pariatur officiis, tenetur accusantium modi laboriosam aliquam deserunt, velit nesciunt blanditiis ipsam! Quisquam, laborum?</p>
         </div>
 
     </main>
