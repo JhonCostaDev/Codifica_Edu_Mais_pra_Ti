@@ -2,10 +2,10 @@ import { useState } from "react";
 
 function ToDoList() {
     
-    const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState("");
+    const [tasks, setTasks] = useState([]); //Array to store the tasks
+    const [newTask, setNewTask] = useState("");//Array to add a new task
 
-    function handleInputChange(event) {
+    function handleInputChange(event) { //get input task and add to array tasks
         setNewTask(event.target.value);
     }
 
@@ -76,7 +76,7 @@ function ToDoList() {
                     )}
                 </ol>
             </div>
-
+            
         </>
     )
 }
