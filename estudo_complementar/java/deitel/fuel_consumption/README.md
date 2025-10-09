@@ -2,6 +2,9 @@
 
 
 ## The Problem - O problema
+
+// I need to translate it
+
 Os motoristas se preocupam com a quilometragem obtida por seus automóveis. Um motorista monitorou várias viagens registrando a quilometragem dirigida e a quanidade de combustível em litros utilizados para cada tanque cheio.
 
 Desenvolva um app java que receba como entrada os KM's dirigidos e os litros de gasolina consumido (ambos como inteiros) para cada viagem.

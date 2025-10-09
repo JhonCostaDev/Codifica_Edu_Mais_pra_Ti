@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 
 public class Travel {
 	private String travelLocation;
 	private int traveledDistance;
 	private int fuelUsed;
-	// private double consume;
+	
 	
 
 	//Constructor
@@ -12,7 +11,6 @@ public class Travel {
 		this.travelLocation = travelLocation;
 		this.traveledDistance = traveledDistance;
 		this.fuelUsed = fuelUsed;
-		// this.consume = traveledDistance / fuelUsed;
 	}
 
 
