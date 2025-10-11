@@ -39,10 +39,10 @@ public class Main {
 		
 	}
 
-	public static newTravel(Driver driver) {
+	// public static newTravel(Driver driver) {
 		
 
 
-		Travel travel = new Travel()
-	}
+	// 	Travel travel = new Travel()
+	// }
 }
