@@ -68,3 +68,30 @@ ios/build/
 *.ipa
 # Vue.js
 dist/
+# Maven target folder
+/target/
+
+# Logs
+*.log
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE files (optional, if you're using IntelliJ, Eclipse, etc.)
+*.iml
+.idea/
+*.classpath
+*.project
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
