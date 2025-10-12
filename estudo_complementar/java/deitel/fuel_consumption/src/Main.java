@@ -37,7 +37,7 @@ public class Main {
 		
 		// System.out.println(joao.getTravelHistory());
 		
-	}
+	// }
 
 	// public static newTravel(Driver driver) {
 		
