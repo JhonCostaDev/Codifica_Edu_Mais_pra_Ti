@@ -26,19 +26,23 @@ public class Main {
 
 		// Travel travel1 = new Travel(travelLocation, traveledDistance, fuelUsed);
 
-		Travel travel1 = new Travel("fortaleza", 250, 30);
-		Travel travel2 = new Travel("bahia", 480, 143);
+		// Travel travel1 = new Travel("fortaleza", 250, 30);
+		// Travel travel2 = new Travel("bahia", 480, 143);
 
 
-		joao.addTravel(travel1);
-		joao.addTravel(travel2);
-		//System.out.println(travel1.toString());
+		// joao.addTravel(travel1);
+		// joao.addTravel(travel2);
+		// //System.out.println(travel1.toString());
 
 		
-		System.out.println(joao.getTravelHistory());
-	}
+		// System.out.println(joao.getTravelHistory());
+		
+	// }
 
-	// public static newTravel() {
+	// public static newTravel(Driver driver) {
+		
 
+
+	// 	Travel travel = new Travel()
 	// }
 }
