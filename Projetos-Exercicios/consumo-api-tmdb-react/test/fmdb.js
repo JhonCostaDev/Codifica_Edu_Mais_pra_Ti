@@ -4,23 +4,23 @@ dotenv.config();
 
 const TMDB_APIKEY = process.env.TMDB_APIKEY;
 const ACCOUNT_ID = '1234'//process.env.REACT_APP_ACCOUNT_ID;
-const REACT_APP_TOKEN_BEARER = process.env.REACT_APP_TOKEN_BEARER;
+const token = process.env.REACT_APP_TOKEN_BEARER;
 const TMDB_URL_BASE = `https://api.themoviedb.org/3/account/${ACCOUNT_ID}/favorite/movies`;
 
+console.log(token)
 
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     Authorization: REACT_APP_TOKEN_BEARER
+//   }
+// };
 
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: REACT_APP_TOKEN_BEARER
-  }
-};
-
-fetch('https://api.themoviedb.org/3/configuration', options)
-  .then(res => res.json())
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
+// fetch('https://api.themoviedb.org/3/configuration', options)
+//   .then(res => res.json())
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err));
 
 // const params = {
 //     language: 'en-US',
@@ -43,7 +43,7 @@ fetch('https://api.themoviedb.org/3/configuration', options)
 //     })
 
 
-fetch('https://api.themoviedb.org/3/configuration', options)
-  .then(res => res.json())
-  .then(res => console.log(res))
-  .catch(err => console.error(err));
+// fetch('https://api.themoviedb.org/3/configuration', options)
+//   .then(res => res.json())
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err));
