@@ -3,7 +3,7 @@ import axios from 'axios';
 dotenv.config();
 
 const TMDB_APIKEY = process.env.TMDB_APIKEY;
-const ACCOUNT_ID = '1234'//process.env.REACT_APP_ACCOUNT_ID;
+const ACCOUNT_ID = process.env.REACT_APP_ACCOUNT_ID;
 const token = process.env.REACT_APP_TOKEN_BEARER;
 const TMDB_URL_BASE = `https://api.themoviedb.org/3/account/${ACCOUNT_ID}/favorite/movies`;
 
