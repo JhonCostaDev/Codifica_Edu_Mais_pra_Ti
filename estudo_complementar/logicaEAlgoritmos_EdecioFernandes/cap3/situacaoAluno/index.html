@@ -1,33 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Programa Situação do Aluno</h1>
-    </header>
-    <main>
-        <form action="" id="calcAverage">
-            <label for="">Nome do Aluno: </label>
-            <input type="text" id="name">
-
-            <label for="">1ª Nota:</label>
-            <input type="number" name="" id="firstGrade" step="any">
-
-            <label for="">2ª Nota:</label>
-            <input type="number" name="" id="secondGrade" step="any">
-
-            <button type="submit">Exibir Média e Situação</button>
-        </form>
-
-        <div class="output">
-            <span id="outAverage"></span>
-            <span id="outSituation"></span>
-        </div>
-    </main>
+    <div class="container">
+        <header>
+            <h1>Programa Situação do Aluno</h1>
+        </header>
+        <main>
+            <form action="" id="calcAverage">
+                <div class="inputs">
+                    <div class="input-name">
+                        <label for="">Aluno: </label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="input-name">
+                        <label for="">Matéria: </label>
+                        <select id="subject">
+                            <option value="Português">Português</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="História">História</option>
+                            <option value="Geografia">Geografia</option>
+                            <option value="Ciências">Ciências</option>
+                        </select>
+                    </div>
+                    <div class="grades-container">
+                        <div class="input-grades">
+                            <label for="">1ª Nota:</label>
+                            <input type="number" name="" id="firstGrade" step="any" required>
+                        </div>
+                        <div class="input-grades">
+                            <label for="">2ª Nota:</label>
+                            <input type="number" name="" id="secondGrade" step="any" required>
+                        </div>
+                        <div class="input-grades">
+                            <label for="">3ª Nota:</label>
+                            <input type="number" name="" id="thirdGrade" step="any" required>
+                        </div>
+                        <div class="input-grades">
+                            <label for="">4ª Nota:</label>
+                            <input type="number" name="" id="fourthGrade" step="any" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn"><button type="submit">Exibir Média e Situação</button></div>
+            </form>
+            <div class="output">
+                <span id="outAverage"></span>
+                <span id="outSituation"></span>
+            </div>
+        </main>
+    </div>
     <footer>
 
     </footer>
