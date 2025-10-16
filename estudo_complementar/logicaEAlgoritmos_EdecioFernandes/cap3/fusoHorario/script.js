@@ -9,8 +9,9 @@ function currentHour() {
     const clock = document.querySelector("#hour");
     clock.textContent = formatedHour;
 }
-async function getFuso() {
-    const baseAPI = "http://worldtimeapi.org/api/timezone";
+
+async function getFuso(city) {
+    const baseAPI = `http://worldtimeapi.org/api/timezone/${city}`;
 
     try {
         const response = await fetch(baseAPI);
@@ -21,6 +22,7 @@ async function getFuso() {
 
         const data = await response.json();
         console.log("Dados recebidos com sucesso!");
+        console.log(data);
         return data;
     }catch(error) {
         console.error("Falha ao buscar os dados: ", error);
@@ -29,13 +31,17 @@ async function getFuso() {
  
 }
 
+// carrega a lista no select ao carregar a pag.
 document.addEventListener("DOMContentLoaded", () => {
         
         const selectCitys = document.querySelector("#citys");
+        const outCity = document.querySelector("#outCity");
+        const outTime = document.querySelector("#outTime");
 
         currentHour();
         setInterval(currentHour,1000)
 
+        //itera no array com nome das cidades e carrega como um option no select do html.
         citys.forEach(item => {
         const newOption = document.createElement("option");
 
@@ -44,9 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         selectCitys.appendChild(newOption);
         });
-    selectCitys.addEventListener("change", () => {
-    
-    })
+
+        //Pega a mudança no select tag
+        selectCitys.addEventListener("change", () => {
+            const optionValue = selectCitys.value;
+            console.log(optionValue);
+            const fuso = getFuso(optionValue);
+//TODO: FORMATAR A SAIDA DA HORA NO HTML
+            outCity.textContent = optionValue;
+            outTime.textContent = fuso.datetime;
+            console.log(fuso.datetime)
+        })
+        
 })
 
 
