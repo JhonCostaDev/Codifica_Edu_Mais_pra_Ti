@@ -6,14 +6,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Fuso horário</title>
 </head>
+<!-- TODO: SEPARAR O NOME DA CIDADE DA REGIAO -->
 <body>
+    <!-- <header>
+        <img src="https://i.ytimg.com/vi/u09Vec6PzM0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqlL_WnI0quKzeR_IY3IpvIuIVBw" alt="">
+    </header> -->
     <div class="container">
-        <h1>Fuso horário</h1>
-        <p>Hora local: <span id="hour">00:00</span></p>
-        <label for="">Selecione a cidade: </label>
-        <select name="" id="citys"></select>
+        <!-- <h1>Fuso horário</h1> -->
+        <div class="localTime">
+            <p>Hora local: <span id="hour">00:00</span></p>
+        </div>
+        <div class="selectGroup">
+            <label for="">Selecione a cidade: </label>
+            <select name="" id="citys"></select>
+        </div>
 
-        <p>Hora em: <span id="outCity"></span><span id="outTime"></span></p>
+        <div class="outputTime">
+            <p>Hora em: <span id="outCity"></span><span id="outTime"></span></p>
+        </div>
     </div>
     <script type="module" src="script.js"></script>
 </body>
