@@ -2,9 +2,9 @@ import citys from "./data/citys.js";
 function currentHour() {
     const today = new Date();
     const formatedHour = today.toLocaleTimeString("pt-BR", {
-       hour: "2-digit",
-       minute: '2-digit',
-       second: '2-digit' 
+        hour: "2-digit",
+        minute: '2-digit',
+        second: '2-digit' 
     })
     const clock = document.querySelector("#hour");
     clock.textContent = formatedHour;
@@ -28,7 +28,6 @@ async function getFuso(city) {
         console.error("Falha ao buscar os dados: ", error);
         return null;
     }
- 
 }
 
 // carrega a lista no select ao carregar a pag.
