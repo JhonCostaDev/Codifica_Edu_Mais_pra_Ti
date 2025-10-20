@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Comsumo {
+public class Consumo {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int somaKilometragem = 0;
