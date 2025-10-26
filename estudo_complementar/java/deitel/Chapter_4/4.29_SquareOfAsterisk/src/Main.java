@@ -13,7 +13,7 @@ public class Main {
             if(square % size == 0) {
                 System.out.println();
             }
-            if()
+            //if()
             System.out.print("*");   
           //System.out.println(size);
           square--;
