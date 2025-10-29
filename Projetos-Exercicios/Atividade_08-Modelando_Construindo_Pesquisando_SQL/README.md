@@ -1,6 +1,9 @@
 # Atividade 08 - Modelando, Construindo e Pesquisando
 
-A cafeteria BomGosto deseja controlar as suas vendas de café. A BomGosto controla suas vendas a partir de uma comanda. Uma comanda tem um código único, data, o número da mesa do cliente e o nome do cliente registrados. Nos itens da comanda é possível relacionar vários cafés listados no cardápio que foram vendidos. Cada item da comanda possui o código do cardápio e a quantidade requisitada deste e, não é possível inserir o mesmo código de cardápio mais de uma vez na mesma comanda. No cardápio é apresentado o nome único do café, a descrição da sua composição e o preço unitário.
+![logo cafeteria bom gosto](assets/bom_gosto_logo.png)
+
+## A proposição
+A cafeteria **BomGosto** deseja controlar as suas vendas de café. A BomGosto controla suas vendas a partir de uma comanda. Uma comanda tem um código único, data, o número da mesa do cliente e o nome do cliente registrados. Nos itens da comanda é possível relacionar vários cafés listados no cardápio que foram vendidos. Cada item da comanda possui o código do cardápio e a quantidade requisitada deste e, não é possível inserir o mesmo código de cardápio mais de uma vez na mesma comanda. No cardápio é apresentado o nome único do café, a descrição da sua composição e o preço unitário.
 
 Desenvolva os scripts SQL para atender cada uma das questões abaixo:
 
@@ -13,3 +16,26 @@ Desenvolva os scripts SQL para atender cada uma das questões abaixo:
 4) Faça a mesma listagem das comandas da questão anterior (6), mas traga apenas as comandas que possuem mais do que um tipo de café na comanda;
 
 5) Qual o total de faturamento por data? ordene por data esta consulta.
+
+## Os Dados
+
+
+## UML das tabelas propostas
+
+![UML das tabelas](./assets/uml_bom_gosto.png)
+
+
+## As respostas
+
+### MySQL
+1. Faça uma listagem do cardápio ordenada por nome;
+
+```SQL
+-- Query SQL
+SELECT * FROM cardapio ORDER BY nome;
+```
+
+### Resultado
+![alt text](./assets/query1.png)
+
+2. Apresente todas as comandas (código, data, mesa e nome do cliente) e os itens da comanda (código comanda, nome do café, descricão, quantidade, preço unitário e preço total do café) destas ordenados data e código da comanda e, também o nome do café;
