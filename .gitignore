@@ -95,3 +95,9 @@ Thumbs.db
 
 # Environment files
 .env
+
+# Ignora o ambiente virtual padrão
+venv/
+ENV/
+env/
+.venv/
